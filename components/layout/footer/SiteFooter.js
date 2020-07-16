@@ -22,7 +22,7 @@ const SiteFooter = () => {
             <footer className={styles.footer}>
                 <div className={styles.footerContainer}>
                     <Row>
-                        <Col span={24} md={{ span: 7, offset: 2 }}>
+                        <Col span={24} md={{ span: 7, offset: 2 }} className="mb-3">
                             <Title level={3} style={{ color: '#fff' }}>TRAVELOG</Title>
                             <p className={styles.lightColor}>Travelog prides itself on producing original, refreshing, and thought
                             provoking content which
@@ -59,7 +59,7 @@ const SiteFooter = () => {
                                 <a href="http://primex-bd.com">PRIMEX infosys</a>
                             </p>
                         </Col>
-                        <Col span={24} md={{ span: 7, offset: 1 }} >
+                        <Col span={24} md={{ span: 7, offset: 1 }} className="mb-5">
                             <Row gutter={0}>
                                 <Col span={12}>
                                     <div className={styles.linkSection}>
