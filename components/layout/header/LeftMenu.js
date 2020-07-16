@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import { Menu, Icon } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 class LeftMenu extends Component {
@@ -15,7 +18,7 @@ class LeftMenu extends Component {
                 <Menu.Item key="quick_video">
                     <a href="">কুইক ভিডিও</a>
                 </Menu.Item>
-                <SubMenu title={<span>ক্যাটাগরি</span>}>
+                <SubMenu title={<span>ক্যাটাগরি <DownOutlined /></span>}>
                     <MenuItemGroup title="Item 1">
                         <Menu.Item key="setting:1">ক্যাটাগরি 1</Menu.Item>
                         <Menu.Item key="setting:2">ক্যাটাগরি 2</Menu.Item>
