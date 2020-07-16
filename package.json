@@ -2,6 +2,7 @@
   "name": "travelog",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"-r esm\" next -p 5050",
     "build": "cross-env NODE_OPTIONS=\"-r esm\" next build",
