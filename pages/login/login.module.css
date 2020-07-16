@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.formWrapper * {
+  font-family: Roboto !important;
+}
+
+.logo {
+    position: absolute;
+    width: 133px;
+    height: 40px;
+    left: 20px;
+    background-image: url(/assets/svg/login/site_logo_login.svg);
+    margin-top: 20px;
+    float: left;
+    background-repeat: no-repeat;
+  }
+  
+  .logoWrapper{
+    position: absolute;
+    z-index: 1;
+  }
+
+  .mainRow {
+    height:100vh
+  }
+
+  .leftColumn{
+    background: #F2F4F7;
+  }
+
+  .leftColLogo{
+    width: 610px;
+    height: 545px;
+    background-image: url(/assets/svg/login/login_page_bg.svg);
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width:768px){
+    .leftColumn{
+      display: none;
+    }
+  }
+
+  .rightColumn{
+  margin-top: 60px;
+  }
+
+  .colContentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
+    padding:15px;
+  }
+  .formWrapper{
+    max-width: 420px;
+  }
+
+  .formTitle{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    /* opacity: 0.9; */
+
+    color: #000000;
+  }
+
+  .rememberWrapper{
+    font-family: Noto Sans, Roboto;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+
+  .btn {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px !important;
+    padding: 8px 30px !important;
+  }
+
+  .btnLogin{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px !important;
+    padding-right:30px !important;
+    padding-left:30px !important;
+
+    background: #E94A62 !important;
+    border:1px solid #E94A62 !important;
+  }
+
+  .btnDisable{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px !important;
+    padding-right:30px !important;
+    padding-left:30px !important;
+
+    background: #E7ECF3 !important;
+    border:1px solid #E7ECF3 !important;
+    color: #9197A0 !important;
+    margin-left: 15px;
+  }
+
+  .btnDisable:hover,.btnDisable:active{
+    color:#E94A62 !important;
+  }
+
+  .authIcon{
+    
+  }
+  
+  .google{
+    width: 29px;
+    height: 29px;
+    margin:8px 12px 0 0;
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url(/assets/svg/login/auth_logo/github.svg);
+  }
+  
+  .github{
+    width: 29px;
+    height: 29px;
+    margin:8px 12px 0 0;
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url(/assets/svg/login/auth_logo/google.svg);
+  }

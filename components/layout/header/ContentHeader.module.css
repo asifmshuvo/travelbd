@@ -1,0 +1,51 @@
+.header{
+  box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  width: 133px;
+  height: 40px;
+  left: 24px;
+  background-image: url(/assets/logo/svg/site_logo_lite.svg);
+  margin-top: 12px;
+  margin-right: 33px;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+/* .logo::after{
+  content: "";
+  display: block;
+  margin-top: 12px;
+  width: 1px;
+  background-color: #9197A0;
+  height: 16px;
+  margin-left: 164px;
+} */
+
+.headerMenu{
+  float: right;
+  padding: 0 15px;
+  margin-top: -2px;
+}
+
+
+@media (max-width:979px){
+  .headerMenu{
+    display:none
+  }
+}
+
+
+
+/* .headerDropdown {
+  float: right;
+  margin-top: 15px;
+  background: rgba(171, 175, 183, 0.45) !important;
+  color: white !important;
+  border: none !important;
+} */
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background-color: #fff !important;
+}

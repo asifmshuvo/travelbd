@@ -1,0 +1,19 @@
+[ignore]
+.*/node_modules/graphql-language-service-interface/.*
+
+# Redundant argument. This argument doesn't change any lint settings.
+#   flowlint uninitialized-instance-property:off
+.*/node_modules/graphql/error/GraphQLError.js.flow
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+esproposal.optional_chaining=enable
+esproposal.class_instance_fields=enable
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+
+[strict]
