@@ -44,5 +44,9 @@
     "components": "^0.1.0",
     "flow-bin": "^0.125.1",
     "flow-typed": "^3.1.0"
+  },
+  "resolutions": {
+    "is-promise": "2.1.0",
+    "run-async/is-promise": "2.1.0"
   }
 }
