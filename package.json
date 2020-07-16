@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"-r esm\" next -p 5050",
     "build": "cross-env NODE_OPTIONS=\"-r esm\" next build",
+    "normal_build": "next build",
     "analyze": "cross-env-shell NODE_OPTIONS=\"-r esm\" ANALYZE=true next build",
     "start": "next start"
   },
