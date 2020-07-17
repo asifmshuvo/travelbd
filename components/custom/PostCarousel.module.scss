@@ -1,0 +1,87 @@
+.carouselContainer{
+    min-height:400px;
+    width:100%;
+    // padding:20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    .sliderBtn{
+        font-size:44px;
+    }
+
+    .carouselWrapper{
+        overflow: hidden;
+
+        .carousel{
+            width:85vw;
+
+            .carouselItem{
+                width: 400px;
+                padding: 0 25px;
+                position: relative;
+                
+                    .authorInfo {
+                        background: rgba(0, 0, 0, 0.75);
+                        color: white;
+                        padding: 0.75rem;
+                        text-align: center;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        margin: 0;
+                        
+                        a {
+                            color: white;
+                        }
+                    }
+                    
+                    
+                    div > a {
+                        color:#fff;
+                        font-weight: 600;
+                        opacity: 0.9;
+                        text-align: left;
+                        font-size: 14px;
+                    }
+                    
+                    a > img {
+                        width: 400px;
+                        height: 250px;
+                        border-radius: 8px;
+                    }
+                    .carouselTitle{
+                        margin-bottom: .5rem;
+                        font-family: inherit;
+                        font-weight: 500;
+                        line-height: 1.1;
+                        color: inherit;
+                    }
+                .postInfo {
+                    width:400px;
+                    position: absolute;
+                    bottom: 0;
+                    margin: 0 10px 15px;
+                    color:#fff;
+                }
+                .categoryTitle{
+                    color:#fff;
+                    font-size: 10px;
+                    opacity: 0.9;
+                }
+                .postDate{
+                    display:inline-block;
+                    color: #fff;
+                    font-size: 10px;
+                    opacity: 0.9;
+                }
+                
+                .svgIcon {
+                    fill:#fff;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import NavBar from 'components/layout/header/Navbar'
-import SiteFooter from 'components/layout/footer/SiteFooter'
+import Layout from 'components/layout'
+
+import { PostCarousel } from 'components/custom';
 
 const Contnet = () => {
     const router = useRouter();
@@ -11,8 +13,9 @@ const Contnet = () => {
     // }, []);
 
     return <div>
-        <NavBar />
-        <SiteFooter />
+        <Layout>
+            <PostCarousel />
+        </Layout>
     </div>;
 };
 

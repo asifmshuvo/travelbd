@@ -1,7 +1,7 @@
 import React from 'react'
-import Card from './card'
+import { PostCard } from './PostCard'
 
-const Articles = ({ articles }) => {
+export const Articles = ({ articles }) => {
   const leftArticlesCount = Math.ceil(articles.length / 5)
   const leftArticles = articles.slice(0, leftArticlesCount)
   const rightArticles = articles.slice(leftArticlesCount, articles.length)
@@ -17,7 +17,7 @@ const Articles = ({ articles }) => {
         <div>
           <div className="uk-child-width-1-2@m uk-grid-match" data-uk-grid>
             {rightArticles.map((article) => {
-              return <Card article={article} key={`article__${article.id}`} className=".uk-margin" />
+              return <PostCard article={article} key={`article__${article.id}`} className=".uk-margin" />
             })}
           </div>
         </div>
@@ -25,5 +25,3 @@ const Articles = ({ articles }) => {
     </div>
   )
 }
-
-export default Articles

@@ -6,7 +6,7 @@ const { Content } = Layout;
 
 export default ({ children, slug }) => {
     return (
-        <Layout className="layout" style={{ height: '100vh' }}>
+        <Layout className="layout" style={{ minHeight: '100vh', background: '#fff' }}>
             <Navbar slug={slug} />
             <Content style={{ height: '100%' }} className="site-bg">
                 {children}
@@ -28,6 +28,6 @@ export default ({ children, slug }) => {
                   }
                 `}
             </style>
-        </Layout>
+        </Layout >
     )
 }

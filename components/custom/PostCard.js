@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Card = ({ article }) => {
+export const PostCard = ({ article }) => {
   const imageUrl = article.image.url.startsWith('/')
     ? process.env.API_URL + article.image.url
     : article.image.url
@@ -30,4 +30,3 @@ const Card = ({ article }) => {
   )
 }
 
-export default Card
