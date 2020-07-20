@@ -55,8 +55,7 @@ const SiteFooter = () => {
                                 </path>
                             </svg></a>
                             </div>
-                            <p className={styles.lightColor}>Copyright © 2020 All Rights Reserved. By<br />
-                                <a href="http://primex-bd.com">PRIMEX infosys</a>
+                            <p className={styles.lightColor}>Copyright © 2020 All Rights Reserved. By <a href="http://primex-bd.com">PRIMEX infosys</a>
                             </p>
                         </Col>
                         <Col span={24} md={{ span: 7, offset: 1 }} className="mb-5">
