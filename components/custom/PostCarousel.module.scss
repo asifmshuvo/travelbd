@@ -19,7 +19,7 @@
 
             .carouselItem{
                 width: 400px;
-                padding: 0 25px;
+                padding: 0 5px;
                 position: relative;
                 
                     .authorInfo {
@@ -84,5 +84,14 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width:768px){
+    .sliderBtn{
+        display:none;
+    }
+    .carouselItem{
+        padding:0;
     }
 }

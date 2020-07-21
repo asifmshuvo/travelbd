@@ -21,7 +21,7 @@ class Navbar extends Component {
         return (
             <nav className="menuBar">
                 <div className="logo">
-                    <a href="">logo</a>
+                    <a href="">Travelog</a>
                 </div>
                 <div className="menuCon">
                     <div className="leftMenu">

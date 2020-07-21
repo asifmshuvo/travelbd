@@ -1,4 +1,4 @@
-import { Row, Col, Typography, Input } from 'antd'
+import { Row, Col, Typography, Input, Button } from 'antd'
 import { } from '@ant-design/icons'
 
 import styles from './SiteFooter.module.scss'
@@ -89,18 +89,16 @@ const SiteFooter = () => {
 
                             </Row>
                         </Col>
-                        <Col span={24} md={7} >
+                        <Col span={24} md={5} >
                             <div className={styles.contact}>
                                 <Title level={4} style={{ color: '#fff' }}>Sign up for our newsletter!</Title>
                                 <p class="light-color">Join our mailing list and get the latest updates</p>
                                 <div style={{ width: '100%', position: 'relative', marginBottom: '15px' }}>
-                                    <Search
+                                    <Input
                                         placeholder="Email Address"
-                                        enterButton="Subscribe"
-                                        size="medium"
-                                        style={{ width: '260px' }}
-                                        onSearch={value => console.log(value)}
+                                        style={{ width: '100%', marginBottom: '5px', background: '#3A3A3C', border: '1px solid #3A3A3C' }}
                                     />
+                                    <Button style={{ width: '100%' }}>Subscribe</Button>
                                 </div>
                                 <p className={styles.lightColor}>Email us for general inquiries and copyright information</p><a
                                     href="mailto:contact@travelog.global" target="_top">contact@travelog.global</a>

@@ -19,14 +19,14 @@ class LeftMenu extends Component {
                     <a href="">কুইক ভিডিও</a>
                 </Menu.Item>
                 <SubMenu title={<span>ক্যাটাগরি <DownOutlined /></span>}>
-                    <MenuItemGroup title="Item 1">
-                        <Menu.Item key="setting:1">ক্যাটাগরি 1</Menu.Item>
-                        <Menu.Item key="setting:2">ক্যাটাগরি 2</Menu.Item>
-                    </MenuItemGroup>
-                    <MenuItemGroup title="Item 2">
-                        <Menu.Item key="setting:3">ক্যাটাগরি 3</Menu.Item>
-                        <Menu.Item key="setting:4">ক্যাটাগরি 4</Menu.Item>
-                    </MenuItemGroup>
+                    <Menu.Item key="dhaka">ঢাকা</Menu.Item>
+                    <Menu.Item key="">খুলনা</Menu.Item>
+                    <Menu.Item key="">রাজশাহী</Menu.Item>
+                    <Menu.Item key="">সিলেট</Menu.Item>
+                    <Menu.Item key="">বরিশাল</Menu.Item>
+                    <Menu.Item key="">চট্টগ্রাম</Menu.Item>
+                    <Menu.Item key="">রংপুর</Menu.Item>
+                    <Menu.Item key="">ময়মনসিংহ</Menu.Item>
                 </SubMenu>
                 {/* <Menu.Item key="alipay">
                     <a href="">Contact Us</a>
