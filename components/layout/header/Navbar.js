@@ -21,7 +21,7 @@ class Navbar extends Component {
         return (
             <nav className="menuBar">
                 <div className="logo">
-                    <a href="">Travelog</a>
+                    <a href="">logo</a>
                 </div>
                 <div className="menuCon">
                     <div className="leftMenu">
@@ -34,13 +34,13 @@ class Navbar extends Component {
                         <span className="barsBtn"></span>
                     </Button>
                     <Drawer
-                        title="Basic Drawer"
+                        title="Logo"
                         placement="right"
                         closable={false}
                         onClose={this.onClose}
                         visible={this.state.visible}
                     >
-                        <LeftMenu />
+                        <LeftMenu vertical/>
                         <RightMenu />
                     </Drawer>
                 </div>

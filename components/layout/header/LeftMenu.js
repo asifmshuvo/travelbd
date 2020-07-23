@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
+import {SubMenuIndicator} from '../nav-components'
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
-class LeftMenu extends Component {
-    render() {
+const LeftMenu = ({vertical}) => {
+    
         return (
-            <Menu mode="horizontal">
+            <Menu mode={vertical?'vertical':'horizontal'}>
                 <Menu.Item key="article">
                     <a href="">আর্টিকেল</a>
                 </Menu.Item>
@@ -18,7 +20,7 @@ class LeftMenu extends Component {
                 <Menu.Item key="quick_video">
                     <a href="">কুইক ভিডিও</a>
                 </Menu.Item>
-                <SubMenu title={<span>ক্যাটাগরি <DownOutlined /></span>}>
+                <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator/></span>}>
                     <Menu.Item key="dhaka">ঢাকা</Menu.Item>
                     <Menu.Item key="">খুলনা</Menu.Item>
                     <Menu.Item key="">রাজশাহী</Menu.Item>
@@ -33,6 +35,5 @@ class LeftMenu extends Component {
                 </Menu.Item> */}
             </Menu>
         );
-    }
 }
 export default LeftMenu;
