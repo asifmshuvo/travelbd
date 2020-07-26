@@ -92,7 +92,7 @@ const SiteFooter = () => {
                         <Col span={24} md={5} >
                             <div className={styles.contact}>
                                 <Title level={4} style={{ color: '#fff' }}>Sign up for our newsletter!</Title>
-                                <p class="light-color">Join our mailing list and get the latest updates</p>
+                                <p className="light-color">Join our mailing list and get the latest updates</p>
                                 <div style={{ width: '100%', position: 'relative', marginBottom: '15px' }}>
                                     <Input
                                         placeholder="Email Address"

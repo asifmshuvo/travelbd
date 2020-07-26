@@ -1,6 +1,6 @@
 import { Row } from 'antd';
 
-export const ShowMore = () => {
+export const ShowMore = (props) => {
     return (
         <Row>
             <div className="show-more-wrapper">

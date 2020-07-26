@@ -24,7 +24,7 @@ export const TabNavigator = () => {
     ]
 
     const renderTabMenu = (MenuItem) => {
-        return menuItem.map(menu => <Button shape="round" className={styles.TabNavBtn} icon={menu.icon}>{menu.name}</Button>)
+        return menuItem.map((menu, i) => <Button key={i} shape="round" className={styles.TabNavBtn} icon={menu.icon}>{menu.name}</Button>)
     }
 
 
