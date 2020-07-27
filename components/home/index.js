@@ -40,17 +40,15 @@ const Home = (params) => {
     })
 
     return (
-        <div>
-            <Layout>
-                <PostCarousel />
-                <TabNavigator />
+        <Layout>
+            <PostCarousel />
+            <TabNavigator />
 
-                <Articles articles={posts} />
-                {loading ? <Loader /> : null}
+            <Articles articles={posts} />
+            {loading ? <Loader /> : null}
 
-                <div onClick={() => { fetchPost() }} ><ShowMore /></div>
-            </Layout>
-        </div>
+            <div onClick={() => { fetchPost() }} ><ShowMore /></div>
+        </Layout>
     )
 }
 

@@ -23,7 +23,7 @@ class Navbar extends Component {
                 <div className="logo">
                     <a href="">logo</a>
                 </div>
-                <div className="menuCon">
+                <div className="menuCon" style={{ width: '100%' }}>
                     <div className="leftMenu">
                         <LeftMenu />
                     </div>
@@ -40,7 +40,7 @@ class Navbar extends Component {
                         onClose={this.onClose}
                         visible={this.state.visible}
                     >
-                        <LeftMenu vertical/>
+                        <LeftMenu vertical />
                         <RightMenu />
                     </Drawer>
                 </div>

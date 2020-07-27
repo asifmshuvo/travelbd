@@ -22,7 +22,7 @@ export const PostCard = ({ article }) => {
   //   : article.image.url
 
   return (
-    <Link as={`/article/${(article?.id ?? '')}`} href="/article/[id]" >
+    <Link as={`/category/${(categoryName || 'others')}/${(article?.id ?? '')}`} href="/category/[category]/[id]" >
       <Card
         hoverable
         style={{ width: 296, margin: '10px' }}
