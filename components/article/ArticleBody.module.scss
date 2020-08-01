@@ -1,3 +1,95 @@
 .articleContainer{
 
+    .headerLeftWrapper{
+        height:100%;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title{
+            margin-top: 1.2rem !important;
+        }
+        .authorContainer{
+            margin: 15px 0px 0px;
+            display: flex;
+            align-items: center;
+            
+            .authorAvatar{
+                margin-right:15px;
+            }
+            
+            .authorMeta{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        .socialLinkWrapper{
+            margin: 15px 0px 0px;
+            font-size: 20px;
+            
+            .socialLink{
+                padding-right: 8px;
+            }
+        }
+
+        @media (max-width: 1024px){
+            .title {
+                font-size: 22px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-weight: 600;
+             }
+        }
+        
+    }
+
+    .featureImageContainer{
+
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        background-color: rgb(249, 249, 249);
+        .featureImage{
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0s;
+        }
+    }
+
+    .divider{
+        margin: 40px 0;
+    }
+
+    .markdownWrapper{
+        p {
+            line-height: 1.5;
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 1.5em;
+            font-weight: 300;
+        }
+        strong {
+            font-weight: bold;
+        }
+        img{
+            width: 100%;
+            object-fit: contain;
+            max-height: 250px;
+            opacity: 1;
+            background-color: rgb(249, 249, 249);
+            transition: opacity 0.3s ease-in 0s;
+        }
+    }
+
+    @media (min-width: 1025px){
+        .featureImageContainer {
+            min-height: 372px;
+            max-width: 660px;
+        }
+    }
+    
 }

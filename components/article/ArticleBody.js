@@ -52,37 +52,40 @@ const ArticleBody = ({ postData }) => {
             <Col span={20} offset={2} xl={{ span: 18, offset: 3 }} className="mt-5 mb-5">
                 <div className={styles.articleContainer}>
                     <Row>
-                        <Col span={24} xl={12}>
-                            <div>
-                                <Text>{categoryName}</Text>
-                                <Title>{title}</Title>
-                            </div>
-                            <div>
+                        <Col span={24} xl={11}>
+                            <div className={styles.headerLeftWrapper}>
                                 <div>
-                                    <Avatar src={author?.node?.avatar?.url ?? ''} />
-                                    <div>
-                                        {author?.node?.name ?? ''}
-                                        <span className={styles.date}>{`${(dayjs(date).format('MMM-DD-YYYY'))}`}</span>
-                                        <span className={styles.dot}>.</span>
-                                    </div>
+                                    <Text>{categoryName}</Text>
+                                    <Title className={styles.title}>{title}</Title>
                                 </div>
                                 <div>
-                                    <FacebookFilled />
-                                    <TwitterCircleFilled />
-                                    <ShareAltOutlined />
+                                    <div className={styles.authorContainer}>
+                                        <Avatar size={44} className={styles.authorAvatar} src={author?.node?.avatar?.url ?? ''} />
+                                        <div className={styles.authorMeta}>
+                                            <span>{author?.node?.name ?? ''}</span>
+                                            <span className={styles.date}>{`${(dayjs(date).format('MMM-DD-YYYY'))}`} <span className={styles.dot}>.</span></span>
+                                        </div>
+                                    </div>
+                                    <div className={styles.socialLinkWrapper}>
+                                        <FacebookFilled className={styles.socialLink} />
+                                        <TwitterCircleFilled className={styles.socialLink} />
+                                        <ShareAltOutlined className={styles.socialLink} />
+                                    </div>
                                 </div>
                             </div>
                         </Col>
-                        <Col span={24} xl={12}>
-                            <div>
-                                <img src={headerImageSource || ''} />
+                        <Col span={24} xl={{ span: 12, offset: 1 }}>
+                            <div className={styles.featureImageContainer}>
+                                <img className={styles.featureImage} src={headerImageSource || ''} />
                             </div>
                         </Col>
                     </Row>
-                    <Divider />
+                    <Divider className={styles.divider} />
                     <Row>
                         <Col span={24} lg={{ span: 20, offset: 2 }}>
-                            <MarkdownViewer source={content} />
+                            <div className={styles.markdownWrapper}>
+                                <MarkdownViewer source={content} />
+                            </div>
                         </Col>
                     </Row>
                 </div>
