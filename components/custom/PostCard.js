@@ -9,8 +9,10 @@ import dayjs from 'dayjs';
 const { Meta } = Card;
 
 export const PostCard = ({ article }) => {
+
   const categoryIndex = article?.categories?.nodes?.length - 1
   const categoryName = article?.categories?.nodes[categoryIndex]?.name ?? ''
+  const categorySlug = article?.categories?.nodes[categoryIndex]?.slug ?? ''
 
   const cardCoverImageUrl = article?.featuredImage?.node?.sourceUrl ?? ''
   console.log('Log: PostCard -> cardCoverImageUrl', cardCoverImageUrl)
@@ -22,7 +24,7 @@ export const PostCard = ({ article }) => {
   //   : article.image.url
 
   return (
-    <Link as={`/category/${(categoryName || 'others')}/${(article?.id ?? '')}`} href="/category/[category]/[id]" >
+    <Link as={`/category/${(categorySlug || 'others')}/${(article?.id ?? '')}`} href="/category/[category]/[id]" >
       <Card
         hoverable
         style={{ width: 296, margin: '10px' }}
@@ -31,7 +33,8 @@ export const PostCard = ({ article }) => {
       >
         <div className={styles.categoryContainer}>
           <span className={styles.category}>{categoryName}</span>
-          <BookOutlined style={{ fontSize: '18px' }} />
+          {/* <BookOutlined style={{ fontSize: '18px' }} /> */}
+          <img src="/assets/logo/bookmark.svg" alt="🖤" />
         </div>
         <Meta
           title={<span className={styles.cardTitle}>{article?.title ?? ''}</span>}

@@ -4,24 +4,26 @@ import { useRouter } from "next/router";
 import { useLazyQuery } from "@apollo/client";
 import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
-import { PostCarousel, ShowMore, Articles } from 'components/custom';
-import { TabNavigator } from 'components/home/TabNavigator';
+import { ShowMore, Articles } from 'components/custom';
 import { errorMessage, Loader } from "custom";
 
-const Home = (params) => {
+const CategoryPage = (params) => {
     const router = useRouter();
+    const { category } = router.query
+
     const [loading, setLoading] = useState(false)
     const [posts, setPosts] = useState([])
     const [postLimit, setPostLimit] = useState(9)
     const [endCursor, setEndCursor] = useState("")
 
     useEffect(() => {
-        fetchPost()
-    }, [])
+        console.log('Log: Home -> category', category)
+        if (category) fetchPost()
+    }, [category])
 
     const fetchPost = () => {
         setLoading(true)
-        getPost({ variables: { first: postLimit, after: endCursor, before: '' } })
+        getPost({ variables: { first: postLimit, after: endCursor, before: '', category_slug: category } })
     }
 
     const [getPost, { data }] = useLazyQuery(GET_RECENT_POST, {
@@ -37,19 +39,15 @@ const Home = (params) => {
     })
 
     return (
-        <>
-            <PostCarousel />
-            <TabNavigator />
-
+        <div>
             <Articles articles={posts} />
             {loading ? <Loader /> : null}
-
             {posts.length > 0 ?
                 <div onClick={() => { fetchPost() }} ><ShowMore /></div>
                 : null
             }
-        </>
+        </div>
     )
 }
 
-export default Home;
+export default CategoryPage;

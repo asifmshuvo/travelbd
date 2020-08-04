@@ -76,12 +76,15 @@
                     color: #fff;
                     font-size: 10px;
                     opacity: 0.9;
+                } 
+                .bookmarkIcon {
+                    padding-right: 10px;
                 }
-                
-                .svgIcon {
-                    fill:#fff;
-                    vertical-align: middle;
+                .meta{
+                    display: flex;
+                    align-items: center;
                 }
+
             }
         }
     }
