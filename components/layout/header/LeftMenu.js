@@ -1,35 +1,46 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Menu, Icon } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
+
+import { mainMenu } from 'config/language/bangla';
 
 import { SubMenuIndicator } from '../nav-components'
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 const LeftMenu = ({ vertical }) => {
+    const [menu, setMenu] = useState(null)
+
+    useEffect(() => {
+        if (!menu) setMenu(renderMenuItem(mainMenu))
+    }, [])
+
+    const renderMenuItem = (menuData) => {
+        return menuData.map((item) => {
+            if (item.name) {
+                return (
+                    (item['nodes'] && item['nodes'].length > 0) ?
+                        <SubMenu key={item.name} title={<span>{item['name']} {item['name'] === 'ক্যাটাগরি' ? <SubMenuIndicator /> : null}</span>}>
+                            {renderMenuItem(item['nodes'])}
+                        </SubMenu>
+                        :
+                        <Menu.Item key={item.name}>
+                            <a href={`/category/${item['slug']}`}>{item['name']}</a>
+                        </Menu.Item>
+
+                )
+            }
+        })
+    }
+
 
     return (
         <Menu mode={vertical ? 'vertical' : 'horizontal'} style={{ width: '100%' }}>
-            <Menu.Item key="article">
-                <a href="">আর্টিকেল</a>
-            </Menu.Item>
-            <Menu.Item key="video">
-                <a href="">ভিডিও</a>
-            </Menu.Item>
-            <Menu.Item key="quick_video">
-                <a href="">কুইক ভিডিও</a>
-            </Menu.Item>
-            <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator /></span>}>
+            {menu}
+            {/* <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator /></span>}>
                 <Menu.Item key="dhaka">ঢাকা</Menu.Item>
-                <Menu.Item key="">খুলনা</Menu.Item>
-                <Menu.Item key="">রাজশাহী</Menu.Item>
-                <Menu.Item key="">সিলেট</Menu.Item>
-                <Menu.Item key="">বরিশাল</Menu.Item>
-                <Menu.Item key="">চট্টগ্রাম</Menu.Item>
-                <Menu.Item key="">রংপুর</Menu.Item>
-                <Menu.Item key="">ময়মনসিংহ</Menu.Item>
-            </SubMenu>
+            </SubMenu> */}
             {/* <Menu.Item key="alipay">
                     <a href="">Contact Us</a>
                 </Menu.Item> */}
