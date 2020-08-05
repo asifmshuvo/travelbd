@@ -25,6 +25,7 @@ const Home = (params) => {
     }
 
     const [getPost, { data }] = useLazyQuery(GET_RECENT_POST, {
+        // fetchPolicy: 'network-only',
         onError: err => {
             errorMessage(err)
             setLoading(false)

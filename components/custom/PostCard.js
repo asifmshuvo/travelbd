@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/Router'
+
 
 import { Card } from 'antd';
 import { BookOutlined } from '@ant-design/icons';
@@ -9,15 +11,18 @@ import dayjs from 'dayjs';
 const { Meta } = Card;
 
 export const PostCard = ({ article }) => {
+  const router = useRouter()
+  const { category, id } = router.query
+  console.log('Log: PostCard -> router.query', category, id)
 
   const categoryIndex = article?.categories?.nodes?.length - 1
   const categoryName = article?.categories?.nodes[categoryIndex]?.name ?? ''
   const categorySlug = article?.categories?.nodes[categoryIndex]?.slug ?? ''
 
   const cardCoverImageUrl = article?.featuredImage?.node?.sourceUrl ?? ''
-  console.log('Log: PostCard -> cardCoverImageUrl', cardCoverImageUrl)
+  // console.log('Log: PostCard -> cardCoverImageUrl', cardCoverImageUrl)
   const cardImageSource = cardCoverImageUrl.replace("https://tb.primex-bd.com/wp", "http://travelbd.xyz");
-  console.log('Log: PostCard -> cardImageSource', cardImageSource)
+  // console.log('Log: PostCard -> cardImageSource', cardImageSource)
 
   // const imageUrl = article.image.url.startsWith('/')
   //   ? process.env.API_URL + article.image.url
@@ -32,10 +37,17 @@ export const PostCard = ({ article }) => {
         cover={<img className={styles.cardImage} alt=" " src={cardImageSource} />}
       >
         <div className={styles.categoryContainer}>
-          <span className={styles.category}>{categoryName}</span>
+          {(!category && !id) ?
+            <Link as={`/category/${categorySlug}`} href="/category/[category]" >
+              <span className={styles.category}>{categoryName}</span>
+            </Link>
+            :
+            <span className={styles.category}>{categoryName}</span>
+          }
           {/* <BookOutlined style={{ fontSize: '18px' }} /> */}
           <img src="/assets/logo/bookmark.svg" alt="🖤" />
         </div>
+
         <Meta
           title={<span className={styles.cardTitle}>{article?.title ?? ''}</span>}
           description={
