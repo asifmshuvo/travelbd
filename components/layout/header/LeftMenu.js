@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link'
 
 import { Menu, Icon } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
@@ -26,7 +27,9 @@ const LeftMenu = ({ vertical }) => {
                         </SubMenu>
                         :
                         <Menu.Item key={item.name}>
-                            <a href={`/category/${item['slug']}`}>{item['name']}</a>
+                            <Link as={`/category/${item['slug']}`} href={`/category/[category]`}>
+                                <a>{item['name']}</a>
+                            </Link>
                         </Menu.Item>
 
                 )

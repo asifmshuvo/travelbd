@@ -98,22 +98,35 @@ const withLess = require('@zeit/next-less')
 // if (typeof require !== 'undefined') {
 //   require.extensions['.less'] = file => { }
 // }
-
-
-module.exports = compose([
-    [
-        withBundleAnalyzer,
-        {
-            enabled: process.env.ANALYZE === 'true',
-        },
-    ],
-    [
-        withLess,
-        {
-            lessLoaderOptions: {
-                javascriptEnabled: true
-            }
+const nextConfig = {
+    target: 'serverless',
+    exportTrailingSlash: true,
+    exportPathMap: async function (defaultPathMap) {
+        return {
+            '/': { page: '/' },
+            // '/about': { page: '/about' },
+            // '/p/hello-nextjs': { page: '/post', query: { title: 'hello-nextjs' } },
         }
-    ],
-])
+    }
+}
+
+module.exports = {
+    ...compose([
+        [
+            withBundleAnalyzer,
+            {
+                enabled: process.env.ANALYZE === 'true',
+            },
+        ],
+        [
+            withLess,
+            {
+                lessLoaderOptions: {
+                    javascriptEnabled: true
+                }
+            }
+        ]
+    ]),
+    ...nextConfig
+}
 

@@ -10,8 +10,10 @@ import { errorMessage, Loader } from "custom";
 const CategoryPage = (params) => {
     const router = useRouter();
     const { category } = router.query
+    console.log('Log: CategoryPage -> category', category)
 
     const [loading, setLoading] = useState(false)
+    const [slug, setSlug] = useState('')
     const [posts, setPosts] = useState([])
     const [postLimit, setPostLimit] = useState(9)
     const [endCursor, setEndCursor] = useState("")
@@ -32,7 +34,12 @@ const CategoryPage = (params) => {
             setLoading(false)
         },
         onCompleted: data => {
-            setPosts([...posts, ...data?.posts?.nodes])
+            if (category === slug) setPosts([...posts, ...data?.posts?.nodes])
+            else {
+                setPosts(data?.posts?.nodes)
+                setSlug(category)
+            }
+
             setEndCursor(data?.posts?.pageInfo?.endCursor ?? '')
             setLoading(false)
         },
