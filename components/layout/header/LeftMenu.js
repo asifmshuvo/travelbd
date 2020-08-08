@@ -5,8 +5,9 @@ import { Menu, Icon } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
 import { mainMenu } from 'config/language/bangla';
-
 import { SubMenuIndicator } from '../nav-components'
+
+import styles from './LeftMenu.module.scss';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -39,7 +40,7 @@ const LeftMenu = ({ vertical }) => {
 
 
     return (
-        <Menu mode={vertical ? 'vertical' : 'horizontal'} style={{ width: '100%' }}>
+        <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.leftMenu}>
             {menu}
             {/* <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator /></span>}>
                 <Menu.Item key="dhaka">ঢাকা</Menu.Item>

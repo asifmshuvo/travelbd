@@ -1,0 +1,9 @@
+.leftMenu{
+    width: 420px;
+}
+
+@media (max-width:767px){
+    .leftMenu{
+        width: auto;
+    }
+}

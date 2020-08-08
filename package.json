@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS=\"-r esm\" next -p 5050",
+    "dev": "cross-env NODE_OPTIONS=\"-r esm\" next -p 3006",
     "build": "cross-env NODE_OPTIONS=\"-r esm\" next build",
     "export": "cross-env NODE_OPTIONS=\"-r esm\" next export",
     "analyze": "cross-env-shell NODE_OPTIONS=\"-r esm\" ANALYZE=true next build",
