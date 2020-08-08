@@ -100,6 +100,7 @@ const withLess = require('@zeit/next-less')
 // }
 const nextConfig = {
     target: 'serverless',
+    jsconfigPaths: true,
     exportTrailingSlash: true,
     exportPathMap: async function (defaultPathMap) {
         return {
