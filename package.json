@@ -51,6 +51,7 @@
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "components": "^0.1.0",
     "flow-bin": "^0.125.1",
-    "flow-typed": "^3.1.0"
+    "flow-typed": "^3.1.0",
+    "webpack": "^4.44.1"
   }
 }
