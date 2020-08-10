@@ -1,1 +1,1 @@
-export {SubMenuIndicator} from './subMenuIndicator'
+export { SubMenuIndicator } from './SubMenuIndicator'
