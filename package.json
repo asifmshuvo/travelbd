@@ -1,6 +1,9 @@
 {
   "name": "travelog",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.x"
+  },
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"-r esm\" next -p 3006",
@@ -8,7 +11,8 @@
     "export": "cross-env NODE_OPTIONS=\"-r esm\" next export",
     "analyze": "cross-env-shell NODE_OPTIONS=\"-r esm\" ANALYZE=true next build",
     "start": "cross-env NODE_OPTIONS=\"-r esm\" next start",
-    "deploy-netlify": "yarn run build && yarn run export && yarn netlify deploy --prod"
+    "deploy-netlify": "yarn run build && yarn run export && yarn netlify deploy --prod",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
