@@ -7,10 +7,10 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"-r esm\" next -p 3006",
-    "build": "cross-env NODE_OPTIONS=\"-r esm\" next build",
+    "build": "next build",
     "export": "cross-env NODE_OPTIONS=\"-r esm\" next export",
     "analyze": "cross-env-shell NODE_OPTIONS=\"-r esm\" ANALYZE=true next build",
-    "start": "cross-env NODE_OPTIONS=\"-r esm\" next start",
+    "start": "next start",
     "deploy-netlify": "yarn run build && yarn run export && yarn netlify deploy --prod",
     "heroku-postbuild": "npm run build"
   },
