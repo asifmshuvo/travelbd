@@ -1,14 +1,21 @@
 {
-  "presets": ["next/babel"],
+  "presets": [
+    "next/babel"
+  ],
   "plugins": [
     "transform-flow-strip-types",
     "graphql-tag",
-    ["styled-components", { "ssr": true }],
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
+    ],
     [
       "import",
       {
         "libraryName": "antd",
-        "libraryDirectory": "es",
+        "libraryDirectory": "lib",
         "style": "index.css"
       }
     ],
@@ -16,7 +23,7 @@
       "import",
       {
         "libraryName": "@ant-design/icons",
-        "libraryDirectory": "es/icons",
+        "libraryDirectory": "lib/icons",
         "camel2DashComponentName": false
       },
       "@ant-design/icons"
