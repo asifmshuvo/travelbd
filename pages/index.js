@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Home from 'components/home';
+import AppLayout from 'components/layout'
 
 const Contnet = () => {
     const router = useRouter();
@@ -9,7 +10,9 @@ const Contnet = () => {
     //     router.push("/user-content/manage");
     // }, []);
 
-    return <Home />
+    return <AppLayout>
+        <Home />
+    </AppLayout>
 };
 
 export default Contnet;
