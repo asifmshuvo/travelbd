@@ -1,15 +1,74 @@
 import React, { useRef } from "react";
+import Link from 'next/link'
+
 import { Carousel, Typography } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+
+import { useQuery } from '@apollo/client';
+import { GET_RECENT_POST } from 'pages/api/query/homePage';
+
+import { Loader, errorMessage } from 'custom';
+import dayjs from 'dayjs';
 
 import styles from './PostCarousel.module.scss';
 
 
 const { Title } = Typography
 
-export const PostCarousel = (params) => {
+export const getCarouselData = () => {
+    const { loading, error, data } = useQuery(GET_RECENT_POST, {
+        variables: {
+            first: 9,
+            category_slug: 'travel_news_featured'
+        }
+    })
+    if (loading) return <Loader />
+    if (error) {
+        errorMessage(error)
+        return null
+    }
+    console.log(data);
+    return <PostCarousel postData={data?.posts} />
+}
+
+const PostCarousel = ({ postData }) => {
+    console.log('Log: PostCarousel -> postData', postData)
     const carouselRef = useRef(null)
 
+
+    const renderCarouselCard = (posts) => {
+        return posts.map(item => getSingleCard(item)) || null
+    }
+
+    const getSingleCard = (article) => {
+        const categoryIndex = article?.categories?.nodes?.length - 1
+        const categoryName = article?.categories?.nodes[categoryIndex]?.name ?? ''
+        const categorySlug = article?.categories?.nodes[categoryIndex]?.slug ?? ''
+
+        const cardCoverImageUrl = article?.featuredImage?.node?.sourceUrl ?? ''
+        // console.log('Log: PostCard -> cardCoverImageUrl', cardCoverImageUrl)
+        const cardImageSource = cardCoverImageUrl.replace("https://tb.primex-bd.com/wp", "http://travelbd.xyz");
+
+        return (
+            <div className={styles.carouselItem}>
+                <Link as={`/category/${(categorySlug || 'others')}/${(article?.id ?? '')}`} href="/category/[category]/[id]" >
+                    <a href="post.html">
+                        <img src={cardImageSource} alt="" />
+                        <div className={styles.postInfo}>
+                            <Link as={`/category/${categorySlug}`} href="/category/[category]" >
+                                <span className={styles.categoryTitle}>{categoryName}</span>
+                            </Link>
+                            <Title ellipsis={{ rows: 2 }} level={4} className={styles.carouselTitle}>{article?.title ?? ''}</Title>
+                            <div className={styles.meta}>
+                                <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" />
+                                <span className={styles.postDate}>{`${(dayjs(article?.date).format('MMM-DD-YYYY'))}`}</span>
+                            </div>
+                        </div>
+                    </a>
+                </Link>
+            </div>
+        )
+    }
 
     const next = () => {
         carouselRef.current.next();
@@ -47,74 +106,7 @@ export const PostCarousel = (params) => {
             <LeftOutlined className={styles.sliderBtn} onClick={previous} />
             <div className={styles.carouselWrapper}>
                 <Carousel ref={carouselRef} {...carouselProps} className={styles.carousel}>
-
-                    <div className={styles.carouselItem}>
-                        <a href="post.html">
-                            <img src="https://assets.roar.media/assets/3giTWL40a4duumT7_images-(7).jpeg?w=360" alt="" />
-                            <div className={styles.postInfo}>
-                                <span className={styles.categoryTitle}>বিজ্ঞান</span>
-                                <Title ellipsis={{ rows: 2 }} level={4} className={styles.carouselTitle}>প্যারালাল ইউনিভার্স ও মাল্টিভার্স: তত্ত্ব নাকি বাস্তব</Title>
-                                <div className={styles.meta}>
-                                    <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" />
-                                    <span className={styles.postDate}>২২ জুলাই ২০২০</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className={styles.carouselItem}>
-                        <a href="post.html">
-                            <img src="https://assets.roar.media/assets/3giTWL40a4duumT7_images-(7).jpeg?w=360" alt="" />
-                            <div className={styles.postInfo}>
-                                <span className={styles.categoryTitle}>বিজ্ঞান</span>
-                                <Title ellipsis={{ rows: 2 }} level={4} className={styles.carouselTitle}>প্যারালাল ইউনিভার্স ও মাল্টিভার্স: তত্ত্ব নাকি বাস্তব</Title>
-                                <div className={styles.meta}>
-                                    <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" />
-                                    <span className={styles.postDate}>২২ জুলাই ২০২০</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className={styles.carouselItem}>
-                        <a href="post.html">
-                            <img src="https://assets.roar.media/assets/3giTWL40a4duumT7_images-(7).jpeg?w=360" alt="" />
-                            <div className={styles.postInfo}>
-                                <span className={styles.categoryTitle}>বিজ্ঞান</span>
-                                <Title ellipsis={{ rows: 2 }} level={4} className={styles.carouselTitle}>প্যারালাল ইউনিভার্স ও মাল্টিভার্স: তত্ত্ব নাকি বাস্তব</Title>
-                                <div className={styles.meta}>
-                                    <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" />
-                                    <span className={styles.postDate}>২২ জুলাই ২০২০</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className={styles.carouselItem}>
-                        <a href="post.html">
-                            <img src="https://assets.roar.media/assets/3giTWL40a4duumT7_images-(7).jpeg?w=360" alt="" />
-                            <div className={styles.postInfo}>
-                                <span className={styles.categoryTitle}>বিজ্ঞান</span>
-                                <Title ellipsis={{ rows: 2 }} level={4} className={styles.carouselTitle}>প্যারালাল ইউনিভার্স ও মাল্টিভার্স: তত্ত্ব নাকি বাস্তব</Title>
-                                <div className={styles.meta}>
-                                    <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" />
-                                    <span className={styles.postDate}>২২ জুলাই ২০২০</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className={styles.carouselItem}>
-                        <a href="post.html">
-                            <img src="https://assets.roar.media/assets/3giTWL40a4duumT7_images-(7).jpeg?w=360" alt="" />
-                            <div className={styles.postInfo}>
-                                <span className={styles.categoryTitle}>বিজ্ঞান</span>
-                                <Title ellipsis={{ rows: 2 }} level={4} className={styles.carouselTitle}>প্যারালাল ইউনিভার্স ও মাল্টিভার্স: তত্ত্ব নাকি বাস্তব</Title>
-                                <div className={styles.meta}>
-                                    <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" />
-                                    <span className={styles.postDate}>২২ জুলাই ২০২০</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-
+                    {renderCarouselCard(postData?.nodes ?? [])}
                 </Carousel>
             </div>
             <RightOutlined className={styles.sliderBtn} onClick={next} />

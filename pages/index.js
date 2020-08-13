@@ -5,10 +5,6 @@ import Home from 'components/home';
 const Contnet = () => {
     const router = useRouter();
 
-    // useEffect(() => {
-    //     router.push("/user-content/manage");
-    // }, []);
-
     return <Home />
 };
 
