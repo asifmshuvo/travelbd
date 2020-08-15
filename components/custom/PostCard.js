@@ -13,7 +13,6 @@ const { Meta } = Card;
 export const PostCard = ({ article }) => {
   const router = useRouter()
   const { category, id } = router.query
-  console.log('Log: PostCard -> router.query', category, id)
 
   const categoryIndex = article?.categories?.nodes?.length - 1
   const categoryName = article?.categories?.nodes[categoryIndex]?.name ?? ''

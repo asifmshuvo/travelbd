@@ -77,9 +77,10 @@
         }
         img{
             width: 100%;
+            margin: 10px auto;
             object-fit: contain;
-            max-height: 250px;
             opacity: 1;
+            text-indent: -10000px;
             background-color: rgb(249, 249, 249);
             transition: opacity 0.3s ease-in 0s;
         }

@@ -1,23 +1,33 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { useLazyQuery } from "@apollo/client";
+import { useLazyQuery, useQuery } from "@apollo/client";
 import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
 import { PostCarousel, ShowMore, Articles } from 'components/custom';
 import { TabNavigator } from 'components/home/TabNavigator';
-import { errorMessage, Loader } from "custom";
+import { errorMessage, Loader, Empty } from "custom";
 
-const Home = (params) => {
-    const router = useRouter();
+export default function getRecentPosts() {
+    const { loading, error, data } = useQuery(GET_RECENT_POST, {
+        variables: {
+            first: 9
+        }
+    })
+    if (loading) return <Loader />
+    if (error) return <Empty />
+    if (data) {
+        const posts = data?.posts?.nodes ?? []
+        const endCursor = data?.posts?.pageInfo?.endCursor ?? ''
+        return posts?.length <= 0 ? <Empty /> : <Home recPosts={posts} cursor={endCursor} />
+    }
+}
+
+const Home = ({ recPosts, cursor }) => {
     const [loading, setLoading] = useState(false)
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState(recPosts)
     const [postLimit, setPostLimit] = useState(9)
-    const [endCursor, setEndCursor] = useState("")
-
-    useEffect(() => {
-        fetchPost()
-    }, [])
+    const [endCursor, setEndCursor] = useState(cursor)
 
     const fetchPost = () => {
         setLoading(true)
@@ -52,5 +62,3 @@ const Home = (params) => {
         </>
     )
 }
-
-export default Home;

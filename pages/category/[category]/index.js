@@ -1,31 +1,48 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { useLazyQuery } from "@apollo/client";
+import { useLazyQuery, useQuery } from "@apollo/client";
 import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
 import { ShowMore, Articles } from 'components/custom';
 import { errorMessage, Loader } from "custom";
 
-const CategoryPage = (params) => {
+export default function getRecentPosts() {
     const router = useRouter();
     const { category } = router.query
-    console.log('Log: CategoryPage -> category', category)
+    console.log('Log: getRecentPosts -> category', category)
 
+    const { loading, error, data } = useQuery(GET_RECENT_POST, {
+        variables: {
+            first: 9,
+            category_slug: category
+        }
+    })
+    if (loading) return <Loader />
+    if (error) return <Empty />
+    if (data) {
+        const posts = data?.posts?.nodes ?? []
+        const endCursor = data?.posts?.pageInfo?.endCursor ?? ''
+        return posts?.length <= 0 ? <Empty /> : <CategoryPage recPosts={posts} cursor={endCursor} catgSlug={category} />
+    }
+}
+
+const CategoryPage = ({ recPosts, cursor, catgSlug }) => {
+    console.log('Log: CategoryPage -> catgSlug', catgSlug)
     const [loading, setLoading] = useState(false)
-    const [slug, setSlug] = useState('')
+    // const [slug, setSlug] = useState(catgSlug)
     const [posts, setPosts] = useState([])
     const [postLimit, setPostLimit] = useState(9)
-    const [endCursor, setEndCursor] = useState("")
+    const [endCursor, setEndCursor] = useState('')
 
     useEffect(() => {
-        console.log('Log: Home -> category', category)
-        if (category) fetchPost()
-    }, [category])
+        setPosts(recPosts)
+        setEndCursor(cursor)
+    }, [catgSlug])
 
     const fetchPost = () => {
         setLoading(true)
-        getPost({ variables: { first: postLimit, after: endCursor, before: '', category_slug: category } })
+        getPost({ variables: { first: postLimit, after: endCursor, before: '', category_slug: catgSlug } })
     }
 
     const [getPost, { data }] = useLazyQuery(GET_RECENT_POST, {
@@ -34,12 +51,7 @@ const CategoryPage = (params) => {
             setLoading(false)
         },
         onCompleted: data => {
-            if (category === slug) setPosts([...posts, ...data?.posts?.nodes])
-            else {
-                setPosts(data?.posts?.nodes)
-                setSlug(category)
-            }
-
+            setPosts([...posts, ...data?.posts?.nodes])
             setEndCursor(data?.posts?.pageInfo?.endCursor ?? '')
             setLoading(false)
         },
@@ -56,5 +68,3 @@ const CategoryPage = (params) => {
         </div>
     )
 }
-
-export default CategoryPage;
