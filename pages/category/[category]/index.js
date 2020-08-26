@@ -4,8 +4,9 @@ import { useRouter } from "next/router";
 import { useLazyQuery, useQuery } from "@apollo/client";
 import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
+import CategoryHeader from 'components/category/CategoryHeader';
 import { ShowMore, Articles } from 'components/custom';
-import { errorMessage, Loader } from "custom";
+import { errorMessage, Loader, Empty } from "custom";
 
 export default function getRecentPosts() {
     const router = useRouter();
@@ -59,6 +60,7 @@ const CategoryPage = ({ recPosts, cursor, catgSlug }) => {
 
     return (
         <div>
+            <CategoryHeader slug={catgSlug} />
             <Articles articles={posts} />
             {loading ? <Loader /> : null}
             {posts.length > 0 ?

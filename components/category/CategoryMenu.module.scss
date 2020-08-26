@@ -1,0 +1,28 @@
+.tabNavigatorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .tabNavigatorWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+
+    .TabNavBtn {
+        color: #292B2C;
+        margin: 0 5px 10px 5px;
+      
+    }
+    
+    .TabNavBtn:active{
+        top: 5px;
+    }
+    .TabNavBtn:hover,.TabNavBtn:focus {
+        background: #292B2C !important;
+        color:#fff;
+        fill: white;
+    }
+
+}
+}
