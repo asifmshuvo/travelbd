@@ -54,20 +54,22 @@ const Home = ({ recPosts, cursor }) => {
             <PostCarousel />
             <TabNavigator setTabMenu={setTabMenu} />
 
-            {tabMenu === 'video' ? <VideoComponent slug={'video'} /> : null}
-            {tabMenu === 'feature_video' ? <VideoComponent slug={'feature_video'} /> : null}
+            <div style={{ minHeight: '428px' }}>
+                {tabMenu === 'video' ? <VideoComponent slug={'video'} /> : null}
+                {tabMenu === 'feature_video' ? <VideoComponent slug={'feature_video'} /> : null}
 
-            {tabMenu !== 'video' && tabMenu !== 'feature_video' ?
-                <div>
-                    <Articles articles={posts} />
-                    {loading ? <Loader /> : null}
+                {tabMenu !== 'video' && tabMenu !== 'feature_video' ?
+                    <div>
+                        <Articles articles={posts} />
+                        {loading ? <Loader /> : null}
 
-                    {posts.length > 0 ?
-                        <div onClick={() => { fetchPost() }} ><ShowMore /></div>
-                        : null
-                    }
-                </div>
-                : null}
+                        {posts.length > 0 ?
+                            <div onClick={() => { fetchPost() }} ><ShowMore /></div>
+                            : null
+                        }
+                    </div>
+                    : null}
+            </div>
         </>
     )
 }
