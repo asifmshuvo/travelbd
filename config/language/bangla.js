@@ -10,7 +10,7 @@ export const mainMenu = [
     },
     {
         name: "ফিচার ভিডিও",
-        slug: 'feature-video'
+        slug: 'feature_video'
     },
     {
         name: "ক্যাটাগরি",

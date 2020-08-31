@@ -50,7 +50,7 @@ const SiteFooter = () => {
                                 </path>
                             </svg></a><a href="" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="20"
                                 height="20" viewBox="0 0 20 20">
-                                <path fill="#636366" fill-rule="nonzero"
+                                <path fill="#636366" fillRule="nonzero"
                                     d="M0 0h1.667C11.775 0 20 8.225 20 18.333V20h-3.333v-1.667c0-8.271-6.729-15-15-15H0V0zm0 6.667h1.667c6.431 0 11.666 5.235 11.666 11.666V20H10v-1.667C10 13.738 6.262 10 1.667 10H0V6.667zM2.5 15a2.5 2.5 0 0 1 0 5 2.5 2.5 0 0 1 0-5z">
                                 </path>
                             </svg></a>

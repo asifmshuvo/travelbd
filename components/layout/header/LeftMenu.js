@@ -28,9 +28,15 @@ const LeftMenu = ({ vertical }) => {
                         </SubMenu>
                         :
                         <Menu.Item key={item.name}>
-                            <Link as={`/category/${item['slug']}`} href={`/category/[category]`}>
-                                <a>{item['name']}</a>
-                            </Link>
+                            {
+                                item.slug ?
+                                    <Link as={`/category/${item['slug']}`} href={`/category/[category]`}>
+                                        <a>{item['name']}</a>
+                                    </Link> :
+                                    <Link as={`/`} href={`/`}>
+                                        <a>{item['name']}</a>
+                                    </Link>
+                            }
                         </Menu.Item>
 
                 )
