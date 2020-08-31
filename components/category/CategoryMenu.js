@@ -38,19 +38,19 @@ export const CategoryMenu = () => {
     const menuItem = [
         {
             name: 'ইতিহাস ও ঐতিহ্য',
-            icon: <HistoryIcon style={{ fontSize: '48px', opacity: '0.8' }} />
+            icon: <HistoryIcon style={{ fontSize: '48px', opacity: '0.8', marginTop: '4px' }} />
         },
         {
             name: 'দর্শনীয় স্থান',
-            icon: <PlaceIcon style={{ fontSize: '48px', opacity: '0.8' }} />
+            icon: <PlaceIcon style={{ fontSize: '48px', opacity: '0.8', marginTop: '4px' }} />
         },
         {
             name: 'খাবার',
-            icon: <FoodIcon style={{ fontSize: '48px', opacity: '0.8' }} />
+            icon: <FoodIcon style={{ fontSize: '48px', opacity: '0.8', marginTop: '4px' }} />
         },
         {
             name: 'ভ্রমন গল্প',
-            icon: <ArticleIcon style={{ fontSize: '48px', opacity: '0.8' }} />
+            icon: <ArticleIcon style={{ fontSize: '48px', opacity: '0.8', marginTop: '4px' }} />
         }
     ]
 
