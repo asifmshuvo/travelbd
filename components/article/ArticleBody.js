@@ -82,7 +82,7 @@ const ArticleBody = ({ postData }) => {
                     </Row>
                     <Divider className={styles.divider} />
                     <Row>
-                        <Col span={24} lg={{ span: 20, offset: 2 }}>
+                        <Col span={24} lg={{ span: 18, offset: 3 }}>
                             <div className={styles.markdownWrapper}>
                                 <MarkdownViewer source={content} />
                             </div>
