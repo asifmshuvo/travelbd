@@ -72,11 +72,17 @@
             margin-bottom: 1.5em;
             font-weight: 300;
         }
+
         strong {
             font-weight: bold;
         }
+
+        figure{
+            width: fit-content !important;
+        }
+
         img{
-            width: 100%;
+            max-width: 100%;
             height: auto;
             margin: 10px auto;
             object-fit: contain;

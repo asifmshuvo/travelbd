@@ -6,6 +6,7 @@ import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
 import CategoryHeader from './CategoryHeader';
 import { ShowMore, Articles } from 'components/custom';
+import { TabNavigator } from 'components/home/TabNavigator';
 import { errorMessage, Loader, Empty } from "custom";
 
 export default function getRecentPosts() {
@@ -60,7 +61,8 @@ const CategoryPage = ({ recPosts, cursor, catgSlug }) => {
 
     return (
         <div>
-            <CategoryHeader slug={catgSlug} />
+            {/* <CategoryHeader slug={catgSlug} /> */}
+            <TabNavigator />
             <Articles articles={posts} />
             {loading ? <Loader /> : null}
             {posts.length > 0 ?
