@@ -41,7 +41,7 @@ export const VideoCard = ({ video }) => {
                 cover={<img className={styles.cardImage} alt={cardCoverImageAltrText} src={cardCoverImageUrl} />}
             >
                 <div className={styles.categoryContainer}>
-                    {(!category && !id) ?
+                    {(!category && !video?.id) ?
                         <Link as={`/category/${category}`} href="/category/[category]" >
                             <span className={styles.category}>{capitalize(globalStrReplace(category, '_', ' ') || '')}</span>
                         </Link>

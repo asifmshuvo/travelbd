@@ -7,14 +7,15 @@ import { GET_RECENT_VIDEOS, GET_RECENT_QVIDEOS } from 'pages/api/query/video';
 import { ShowMore, Articles } from 'components/custom';
 import { errorMessage, Loader, Empty } from "custom";
 
-export default function getRecentVideos() {
+export default function getRecentVideos({ slug }) {
     const router = useRouter();
     const { category } = router.query
+    const catSlug = category || slug || ''
     let query;
     let videoFormat;
 
-    if (category) {
-        switch (category) {
+    if (catSlug) {
+        switch (catSlug) {
             case 'video':
                 query = GET_RECENT_VIDEOS;
                 videoFormat = 'videos';

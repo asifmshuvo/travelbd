@@ -5,6 +5,7 @@ import { useLazyQuery, useQuery } from "@apollo/client";
 import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
 import { PostCarousel, ShowMore, Articles } from 'components/custom';
+import VideoComponent from 'components/video';
 import { TabNavigator } from 'components/home/TabNavigator';
 import { errorMessage, Loader, Empty } from "custom";
 
@@ -28,6 +29,7 @@ const Home = ({ recPosts, cursor }) => {
     const [posts, setPosts] = useState(recPosts)
     const [postLimit, setPostLimit] = useState(9)
     const [endCursor, setEndCursor] = useState(cursor)
+    const [tabMenu, setTabMenu] = useState('')
 
     const fetchPost = () => {
         setLoading(true)
@@ -50,15 +52,22 @@ const Home = ({ recPosts, cursor }) => {
     return (
         <>
             <PostCarousel />
-            <TabNavigator />
+            <TabNavigator setTabMenu={setTabMenu} />
 
-            <Articles articles={posts} />
-            {loading ? <Loader /> : null}
+            {tabMenu === 'video' ? <VideoComponent slug={'video'} /> : null}
+            {tabMenu === 'feature_video' ? <VideoComponent slug={'feature_video'} /> : null}
 
-            {posts.length > 0 ?
-                <div onClick={() => { fetchPost() }} ><ShowMore /></div>
-                : null
-            }
+            {tabMenu !== 'video' && tabMenu !== 'feature_video' ?
+                <div>
+                    <Articles articles={posts} />
+                    {loading ? <Loader /> : null}
+
+                    {posts.length > 0 ?
+                        <div onClick={() => { fetchPost() }} ><ShowMore /></div>
+                        : null
+                    }
+                </div>
+                : null}
         </>
     )
 }

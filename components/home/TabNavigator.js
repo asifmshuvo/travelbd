@@ -3,28 +3,32 @@ import { SortAscendingOutlined, ReadOutlined, VideoCameraOutlined, YoutubeOutlin
 
 import styles from './TabNavigator.module.scss';
 
-export const TabNavigator = () => {
+export const TabNavigator = ({ setTabMenu }) => {
     const menuItem = [
         {
             name: 'All',
-            icon: <SortAscendingOutlined />
+            icon: <SortAscendingOutlined />,
+            key: 'all'
         },
         {
             name: 'Articles',
-            icon: <ReadOutlined />
+            icon: <ReadOutlined />,
+            key: 'article'
         },
         {
             name: 'Feature Videos',
-            icon: <VideoCameraOutlined />
+            icon: <VideoCameraOutlined />,
+            key: 'video'
         },
         {
             name: 'Quick Videos',
-            icon: <YoutubeOutlined />
+            icon: <YoutubeOutlined />,
+            key: 'feature_video'
         }
     ]
 
     const renderTabMenu = (MenuItem) => {
-        return menuItem.map((menu, i) => <Button key={i} shape="round" className={styles.TabNavBtn} icon={menu.icon}>{menu.name}</Button>)
+        return menuItem.map((menu, i) => <Button key={i} onClick={() => { setTabMenu(menu.key) }} shape="round" className={styles.TabNavBtn} icon={menu.icon}>{menu.name}</Button>)
     }
 
 
