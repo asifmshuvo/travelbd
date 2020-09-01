@@ -37,7 +37,7 @@ export const CategoryMenu = () => {
 
     const menuItem = [
         {
-            name: 'ইতিহাস ও ঐতিহ্য',
+            name: 'ইতিহাস ও সংস্কৃতি',
             icon: <HistoryIcon style={{ fontSize: '48px', opacity: '0.8', marginTop: '4px' }} />
         },
         {

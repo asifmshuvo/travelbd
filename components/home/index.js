@@ -5,7 +5,7 @@ import { useLazyQuery, useQuery } from "@apollo/client";
 import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
 import { PostCarousel, ShowMore, Articles } from 'components/custom';
-import VideoComponent from 'components/video';
+import { VideoCategoryPage } from 'components/video';
 import { TabNavigator } from 'components/home/TabNavigator';
 import { errorMessage, Loader, Empty } from "custom";
 

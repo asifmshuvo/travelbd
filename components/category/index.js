@@ -61,8 +61,8 @@ const CategoryPage = ({ recPosts, cursor, catgSlug }) => {
 
     return (
         <div>
-            {/* <CategoryHeader slug={catgSlug} /> */}
-            <TabNavigator />
+            <CategoryHeader slug={catgSlug} />
+            {/* <TabNavigator /> */}
             <Articles articles={posts} />
             {loading ? <Loader /> : null}
             {posts.length > 0 ?

@@ -7,23 +7,13 @@ query getRecentVideos($after: String, $before: String, $first: Int) {
         endCursor
       }
       nodes {
-        content
-        date
         id
         title(format: RAW)
+        date
         videoInformation {
-          videoUrl
           featuredImage {
-            altText
+            # altText
             sourceUrl(size: MEDIUM)
-            # author {
-            #   node {
-            #     avatar {
-            #       url
-            #     }
-            #     name
-            #   }
-            # }
           }
         }
       }
@@ -37,25 +27,38 @@ query getRecentVideos($after: String, $before: String, $first: Int) {
         endCursor
       }
       nodes {
-        content
-        date
         id
         title(format: RAW)
+        date
         videoInformation {
-          videoUrl
           featuredImage {
-            altText
+            # altText
             sourceUrl(size: MEDIUM)
-            author {
-              node {
-                avatar {
-                  url
-                }
-                name
-              }
-            }
           }
         }
       }
     }
   }`
+
+export const GET_SINGLE_VIDEO = gql`
+query getSingleVideo($id: ID!) {
+  video(id: $id) {
+    title
+    date
+    videoInformation {
+      videoUrl
+      featuredImage {
+        sourceUrl(size: MEDIUM)
+        author {
+          node {
+            avatar {
+              url
+            }
+            name
+          }
+        }
+      }
+    }
+    content(format: RENDERED)
+  }
+}`
