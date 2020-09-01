@@ -65,6 +65,8 @@
     }
 
     .markdownWrapper{
+        // text-align: justify;
+
         p {
             line-height: 1.5;
             font-size: 16px;
@@ -77,7 +79,7 @@
             font-weight: bold;
         }
 
-        figure{
+        figure {
             width: fit-content !important;
         }
 
@@ -90,6 +92,9 @@
             text-indent: -10000px;
             background-color: rgb(249, 249, 249);
             transition: opacity 0.3s ease-in 0s;
+        }
+        a img{
+            display: flex;
         }
     }
 

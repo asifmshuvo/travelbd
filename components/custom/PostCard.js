@@ -33,7 +33,7 @@ export const PostCard = ({ article }) => {
         hoverable
         style={{ width: 296, margin: '10px' }}
         bodyStyle={{ padding: '15px' }}
-        cover={<img className={styles.cardImage} alt=" " src={cardImageSource} />}
+        cover={<img loading="lazy" className={styles.cardImage} alt="‎ " src={cardImageSource} onerror="this.style.display='none'" />}
       >
         <div className={styles.categoryContainer}>
           {(!category && !id) ?
