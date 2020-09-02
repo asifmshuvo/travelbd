@@ -8,6 +8,8 @@ import { GET_SINGLE_VIDEO } from 'pages/api/query/video';
 
 import dayjs from 'dayjs';
 import { Loader, Empty, errorMessage } from 'custom';
+
+const VideoPlayer = dynamic(() => import('util/VideoReact'))
 const MarkdownViewer = dynamic(() => import('util/MarkdownViewer'), { loading: () => <Loader /> })
 
 import styles from 'components/article/ArticleBody.module.scss'
@@ -39,6 +41,7 @@ const SingleVideo = ({ videoData }) => {
     console.log('Log: SingleVideo -> videoData', videoData)
     const { title, date, videoInformation, content } = videoData
     const { videoUrl, featuredImage } = videoInformation
+    console.log('Log: SingleVideo -> videoUrl', videoUrl)
     const { author } = featuredImage
 
     // const categoryIndex = categories?.nodes?.length - 1
@@ -77,7 +80,8 @@ const SingleVideo = ({ videoData }) => {
                         </Col>
                         <Col span={24} xl={{ span: 12, offset: 1 }}>
                             <div className={styles.featureImageContainer}>
-                                <img className={styles.featureImage} src={headerImageUrl || ''} />
+                                {/* <img className={styles.featureImage} src={headerImageUrl || ''} /> */}
+                                <VideoPlayer poster={headerImageUrl} src={'https://media.w3.org/2010/05/sintel/trailer_hd.mp4'} />
                             </div>
                         </Col>
                     </Row>
