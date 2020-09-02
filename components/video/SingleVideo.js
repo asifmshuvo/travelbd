@@ -81,7 +81,7 @@ const SingleVideo = ({ videoData }) => {
                         <Col span={24} xl={{ span: 12, offset: 1 }}>
                             <div className={styles.featureImageContainer}>
                                 {/* <img className={styles.featureImage} src={headerImageUrl || ''} /> */}
-                                <VideoPlayer poster={headerImageUrl} src={'https://media.w3.org/2010/05/sintel/trailer_hd.mp4'} />
+                                <VideoPlayer poster={headerImageUrl} src={videoUrl} />
                             </div>
                         </Col>
                     </Row>
