@@ -44,7 +44,7 @@ const ArticleBody = ({ postData }) => {
     const categoryName = categories?.nodes[categoryIndex]?.name ?? ''
 
     const headerImageUrl = featuredImage?.node?.sourceUrl ?? ''
-    const headerImageSource = headerImageUrl.replace("https://tb.primex-bd.com/wp", "http://travelbd.xyz");
+    const headerImageSource = headerImageUrl.replace("https://tb.primex-bd.com/wp", "https://travelbd.xyz");
 
     return (
 

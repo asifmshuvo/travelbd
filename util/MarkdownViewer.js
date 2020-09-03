@@ -5,7 +5,7 @@ import { globalStrReplace } from 'util/functions';
 
 const MarkdownViewer = (props) => {
     //replace ImageHost
-    const newSrc = globalStrReplace(props.source, 'https://tb.primex-bd.com/wp', 'http://travelbd.xyz')
+    const newSrc = globalStrReplace(props.source, 'https://tb.primex-bd.com/wp', 'https://travelbd.xyz')
 
     return (
         <Markdown
