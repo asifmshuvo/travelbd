@@ -49,10 +49,10 @@ const ArticleBody = ({ postData }) => {
     return (
 
         <Row>
-            <Col span={20} offset={2} xl={{ span: 18, offset: 3 }} className="mt-5 mb-5">
+            <Col span={20} offset={2} lg={{ span: 18, offset: 3 }} className="mt-5 mb-5">
                 <div className={styles.articleContainer}>
                     <Row>
-                        <Col span={24} xl={11}>
+                        <Col span={24} lg={11}>
                             <div className={styles.headerLeftWrapper}>
                                 <div>
                                     <Text>{categoryName}</Text>
@@ -74,7 +74,7 @@ const ArticleBody = ({ postData }) => {
                                 </div>
                             </div>
                         </Col>
-                        <Col span={24} xl={{ span: 12, offset: 1 }}>
+                        <Col span={24} lg={{ span: 12, offset: 1 }}>
                             <div className={styles.featureImageContainer}>
                                 <img className={styles.featureImage} src={headerImageSource || ''} />
                             </div>

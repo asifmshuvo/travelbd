@@ -6,7 +6,7 @@ import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
 import { PostCarousel, ShowMore, Articles } from 'components/custom';
 import { VideoCategoryPage } from 'components/video';
-import { TabNavigator } from 'components/home/TabNavigator';
+import { TabNavigator } from 'components/layout/nav-components/TabNavigator';
 import { errorMessage, Loader, Empty } from "custom";
 
 export default function getRecentPosts() {
@@ -55,8 +55,8 @@ const Home = ({ recPosts, cursor }) => {
             <TabNavigator setTabMenu={setTabMenu} />
 
             <div style={{ minHeight: '428px' }}>
-                {tabMenu === 'video' ? <VideoComponent slug={'video'} /> : null}
-                {tabMenu === 'feature_video' ? <VideoComponent slug={'feature_video'} /> : null}
+                {tabMenu === 'video' ? <VideoCategoryPage slug={'video'} /> : null}
+                {tabMenu === 'feature_video' ? <VideoCategoryPage slug={'feature_video'} /> : null}
 
                 {tabMenu !== 'video' && tabMenu !== 'feature_video' ?
                     <div>

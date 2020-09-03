@@ -1,15 +1,26 @@
+import { useRouter } from 'next/router';
 import { Layout } from 'antd';
 import Navbar from './header/Navbar';
 import SiteFooter from './footer/SiteFooter';
+import { TabNavigator } from './nav-components';
 
 const { Content } = Layout;
 
-export default ({ children, slug }) => {
+export default ({ children }) => {
+    const { category } = useRouter().query
+    // console.log('Log: slug', category)
+
     return (
         <Layout className="layout" style={{ minHeight: '100vh', background: '#fff' }}>
-            <Navbar slug={slug} />
-            <Content style={{ height: '100%' }} className="site-bg">
+            <Navbar />
+            <Content style={{ height: '100%', minHeight: 'calc(100vh - 52px)' }} className="site-bg">
                 {children}
+
+                {category ?
+                    <div style={{ margin: '0', position: 'sticky', bottom: '0', top: 'calc(100vh - 65px)' }}>
+                        <TabNavigator />
+                    </div>
+                    : null}
             </Content>
             <SiteFooter />
 

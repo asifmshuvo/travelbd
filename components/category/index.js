@@ -6,7 +6,7 @@ import { GET_RECENT_POST } from 'pages/api/query/homePage';
 
 import CategoryHeader from './CategoryHeader';
 import { ShowMore, Articles } from 'components/custom';
-import { TabNavigator } from 'components/home/TabNavigator';
+import { TabNavigator } from 'components/layout/nav-components/TabNavigator';
 import { errorMessage, Loader, Empty } from "custom";
 
 export default function getRecentPosts() {
