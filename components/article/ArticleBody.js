@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { Row, Col, Typography, Avatar, Divider } from 'antd';
-import { FacebookFilled, TwitterCircleFilled, ShareAltOutlined } from '@ant-design/icons'
+import { UserOutlined, FacebookFilled, TwitterCircleFilled, ShareAltOutlined } from '@ant-design/icons'
 
 import { useQuery } from '@apollo/client';
 import { GET_SINGLE_POST_CONTENT } from 'pages/api/query/ArticlePage';
@@ -60,7 +60,7 @@ const ArticleBody = ({ postData }) => {
                                 </div>
                                 <div>
                                     <div className={styles.authorContainer}>
-                                        <Avatar size={44} className={styles.authorAvatar} src={author?.node?.avatar?.url ?? ''} />
+                                        <Avatar size={44} icon={<UserOutlined />} className={styles.authorAvatar} src={author?.node?.avatar?.url ?? ''} />
                                         <div className={styles.authorMeta}>
                                             <span>{author?.node?.name ?? ''}</span>
                                             <span className={styles.date}>{`${(dayjs(date).format('MMM-DD-YYYY'))}`} <span className={styles.dot}>.</span></span>
