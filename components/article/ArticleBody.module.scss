@@ -81,9 +81,14 @@
 
         figure {
             width: fit-content !important;
+
+            figcaption{
+                width: fit-content;
+            }
         }
 
         img{
+            width: max-content;
             max-width: 100%;
             height: auto;
             margin: 10px auto;
