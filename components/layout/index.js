@@ -17,7 +17,7 @@ export default ({ children }) => {
                 {children}
 
                 {category ?
-                    <div style={{ margin: '0', position: 'sticky', bottom: '0', top: 'calc(100vh - 65px)' }}>
+                    <div className='tabNavigator' style={{ margin: '0', position: 'sticky', bottom: '0', top: 'calc(100vh - 65px)' }}>
                         <TabNavigator />
                     </div>
                     : null}
@@ -37,6 +37,11 @@ export default ({ children }) => {
                     margin: 16px 24px 16px 0;
                     float: left;
                   }
+                  @media (min-width: 768px) {
+                      .tabNavigator {
+                            display: none;
+                        }
+                    }
                 `}
             </style>
         </Layout >

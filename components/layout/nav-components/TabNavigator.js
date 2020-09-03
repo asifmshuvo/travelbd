@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Row, Button } from 'antd';
 import { SortAscendingOutlined, ReadOutlined, VideoCameraOutlined, CarOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 
@@ -9,7 +10,7 @@ export const TabNavigator = ({ setTabMenu }) => {
         {
             name: 'সকল লেখা',
             icon: <SortAscendingOutlined />,
-            key: 'all'
+            key: 'recent'
         },
         {
             name: 'ভিডিও',
@@ -34,7 +35,11 @@ export const TabNavigator = ({ setTabMenu }) => {
                 return <Button key={i} onClick={() => { setTabMenu(menu.key) }} shape="round" className={styles.TabNavBtn} icon={menu.icon}>{menu.name}</Button>
             }
             else {
-                return <Button key={i} shape="round" className={styles.TabNavBtn}>{menu.name}</Button>
+                return (
+                    <Link href='/category/[category]' as={`/category/${menu.key}`} key={i}>
+                        <Button shape="round" className={styles.TabNavBtn}>{menu.name}</Button>
+                    </Link>
+                )
             }
         })
 
