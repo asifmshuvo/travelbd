@@ -49,13 +49,13 @@ export const PostCard = ({ article }) => {
 
         <Meta
           title={<span className={styles.cardTitle}>{article?.title ?? ''}</span>}
-          description={
-            <div className={styles.descriptionWrapper}>
-              <span className={styles.date}>{`${(dayjs(article?.date).format('MMM-DD-YYYY'))}`}</span>
-              <span className={styles.dot}>.</span>
-              {/* <span className={styles.readingCount}>33 বার পড়া হয়েছে</span> */}
-            </div>
-          }
+          // description={
+          //   <div className={styles.descriptionWrapper}>
+          //     <span className={styles.date}>{`${(dayjs(article?.date).format('MMM-DD-YYYY'))}`}</span>
+          //     <span className={styles.dot}>.</span>
+          //     {/* <span className={styles.readingCount}>33 বার পড়া হয়েছে</span> */}
+          //   </div>
+          // }
         />
       </Card>
     </Link>
