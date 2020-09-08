@@ -48,7 +48,7 @@ const MainMenu = ({ vertical }) => {
 
     return (
         <div className={styles.mainMenuWrapper}>
-            <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.mainMenu} style={{ minWidth: '520px' }}>
+            <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.mainMenu} inlineCollapsed={false}>
                 {menu}
                 {/* <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator /></span>}>
                 <Menu.Item key="dhaka">ঢাকা</Menu.Item>
