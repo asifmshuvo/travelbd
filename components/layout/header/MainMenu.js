@@ -48,15 +48,17 @@ const MainMenu = ({ vertical }) => {
 
     return (
         <div className={styles.mainMenuWrapper}>
-            <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.mainMenu} inlineCollapsed={false}>
-                {menu}
-                {/* <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator /></span>}>
+            <div style={{ minWidth: '520px' }}>
+                <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.mainMenu}>
+                    {menu}
+                    {/* <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator /></span>}>
                 <Menu.Item key="dhaka">ঢাকা</Menu.Item>
             </SubMenu> */}
-                {/* <Menu.Item key="alipay">
+                    {/* <Menu.Item key="alipay">
                     <a href="">Contact Us</a>
                 </Menu.Item> */}
-            </Menu>
+                </Menu>
+            </div>
         </div>
     );
 }
