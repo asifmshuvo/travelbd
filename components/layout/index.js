@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { Layout } from 'antd';
 import Navbar from './header/Navbar';
+import MainMenu from './header/MainMenu'
 import SiteFooter from './footer/SiteFooter';
 import { TabNavigator } from './nav-components';
 
@@ -13,6 +14,7 @@ export default ({ children }) => {
     return (
         <Layout className="layout" style={{ minHeight: '100vh', background: '#fff' }}>
             <Navbar />
+            <MainMenu />
             <Content style={{ height: '100%', minHeight: 'calc(100vh - 52px)' }} className="site-bg">
                 {children}
 

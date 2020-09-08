@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LeftMenu from './LeftMenu'
 import RightMenu from './RightMenu'
 import { Drawer, Button } from 'antd';
 class Navbar extends Component {
@@ -24,9 +23,6 @@ class Navbar extends Component {
                     <a href="">logo</a>
                 </div>
                 <div className="menuCon" style={{ width: '100%' }}>
-                    <div className="leftMenu">
-                        <LeftMenu />
-                    </div>
                     <div className="rightMenu">
                         <RightMenu />
                     </div>
@@ -40,7 +36,7 @@ class Navbar extends Component {
                         onClose={this.onClose}
                         visible={this.state.visible}
                     >
-                        <LeftMenu vertical />
+                        {/* <LeftMenu vertical /> */}
                         <RightMenu />
                     </Drawer>
                 </div>

@@ -59,8 +59,8 @@ export const CategoryMenu = () => {
             <Button key={i} style={{ height: '85px', minWidth: '85px', borderRadius: '20px' }} className={styles.TabNavBtn} >
                 {
                     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '5px 0' }}>
-                        {menu.icon}
-                        {menu.name}
+                        <div style={{ minWidth: '32px' }}>{menu.icon}</div>
+                        <span>{menu.name}</span>
                     </div>
                 }
             </Button>

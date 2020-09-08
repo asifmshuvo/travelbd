@@ -1,0 +1,28 @@
+.mainMenuWrapper{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    
+
+    // .mainMenu{
+    //     width: 420px;
+    // }
+}
+
+
+
+@media (max-width:767px){
+    .leftMenu{
+        width: auto;
+    }
+}
+
+@media (max-width:550px){
+    .mainMenuWrapper{
+        justify-content: start;
+    }
+}

@@ -1,20 +1,8 @@
 //navMenu
 export const mainMenu = [
     {
-        name: "আর্টিকেল",
-        slug: ''
-    },
-    {
-        name: "ভিডিও",
-        slug: 'video'
-    },
-    {
-        name: "ফিচার ভিডিও",
-        slug: 'feature_video'
-    },
-    {
-        name: "ক্যাটাগরি",
-        slug: '',
+        name: "বাংলাদেশ",
+        slug: 'bangladesh',
         nodes: [
             {
                 "name": "ঢাকা বিভাগ",
@@ -86,7 +74,7 @@ export const mainMenu = [
             },
             {
                 "name": "চট্টগ্রাম বিভাগ",
-                "slug": "chattogram-division",
+                "slug": "chattogram_division",
                 "nodes": [
                     {
                         "name": "কক্সবাজার",
@@ -132,7 +120,7 @@ export const mainMenu = [
             },
             {
                 "name": "বরিশাল বিভাগ",
-                "slug": "barishal",
+                "slug": "barishal_division",
                 "nodes": [
                     {
                         "name": "ঝালকাঠি",
@@ -162,7 +150,7 @@ export const mainMenu = [
             },
             {
                 "name": "খুলনা বিভাগ",
-                "slug": "khulna",
+                "slug": "khulna_division",
                 "nodes": [
                     {
                         "name": "কুষ্টিয়া",
@@ -208,7 +196,7 @@ export const mainMenu = [
             },
             {
                 "name": "রাজশাহী বিভাগ",
-                "slug": "rajshahi",
+                "slug": "rajshahi_division",
                 "nodes": [
                     {
                         "name": "চাঁপাইনবাবগঞ্জ",
@@ -246,7 +234,7 @@ export const mainMenu = [
             },
             {
                 "name": "রংপুর বিভাগ",
-                "slug": "rangpur-division",
+                "slug": "rangpur_division",
                 "nodes": [
                     {
                         "name": "কুড়িগ্রাম",
@@ -284,7 +272,7 @@ export const mainMenu = [
             },
             {
                 "name": "ময়মনসিংহ বিভাগ",
-                "slug": "mymenshing-division",
+                "slug": "mymenshing_division",
                 "nodes": [
                     {
                         "name": "জামালপুর",
@@ -306,4 +294,20 @@ export const mainMenu = [
             }
         ]
     },
+    {
+        name: "অন্যদেশ",
+        slug: 'othercountries'
+    },
+    {
+        name: "জনপ্রিয়",
+        slug: 'populer'
+    },
+    {
+        name: "ভ্রমন ফিচার",
+        slug: 'travelfeature'
+    },
+    {
+        name: "পর্যটন নিউজ",
+        slug: 'travel_news'
+    }
 ]
