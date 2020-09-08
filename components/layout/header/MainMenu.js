@@ -28,7 +28,7 @@ const MainMenu = ({ vertical }) => {
                     //         {renderMenuItem(item['nodes'])}
                     //     </SubMenu>
                     //     :
-                    <Menu.Item key={item.name}>
+                    <Menu.Item key={item.name} style={{ minWidth: '520px' }}>
                         {
                             item.slug ?
                                 <Link as={`/category/${item['slug']}`} href={`/category/${item['slug'] !== 'bangladesh' ? '[category]' : item['slug']}`}>
