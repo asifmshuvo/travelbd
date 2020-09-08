@@ -28,7 +28,7 @@ const MainMenu = ({ vertical }) => {
                     //         {renderMenuItem(item['nodes'])}
                     //     </SubMenu>
                     //     :
-                    <Menu.Item key={item.name} style={{ minWidth: '520px' }}>
+                    <Menu.Item key={item.name}>
                         {
                             item.slug ?
                                 <Link as={`/category/${item['slug']}`} href={`/category/${item['slug'] !== 'bangladesh' ? '[category]' : item['slug']}`}>
@@ -48,7 +48,7 @@ const MainMenu = ({ vertical }) => {
 
     return (
         <div className={styles.mainMenuWrapper}>
-            <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.mainMenu}>
+            <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.mainMenu} style={{ minWidth: '520px' }}>
                 {menu}
                 {/* <SubMenu title={<span>ক্যাটাগরি <SubMenuIndicator /></span>}>
                 <Menu.Item key="dhaka">ঢাকা</Menu.Item>
