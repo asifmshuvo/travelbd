@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Link from 'next/link'
 
-import { Carousel, Typography } from "antd";
+import { Carousel, Typography, Space, Spin } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 import { useQuery } from '@apollo/client';
@@ -22,7 +22,13 @@ export const getCarouselData = () => {
             category_slug: 'travel_news_featured'
         }
     })
-    if (loading) return <Loader />
+    if (loading) return (
+        <div style={{ margin: '15px', minHeight: '200px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <Space size="middle">
+                <Spin />
+            </Space>
+        </div>
+    )
     if (error) {
         errorMessage(error)
         return null
@@ -94,7 +100,7 @@ const PostCarousel = ({ postData }) => {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: '40px',
+                    centerPadding: '42px',
                     slidesToShow: 1
                 }
             },

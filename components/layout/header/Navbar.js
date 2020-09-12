@@ -1,47 +1,61 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import Link from 'next/link';
+import { Drawer, Button, Input } from 'antd';
+import { SearchOutlined, CloseOutlined } from '@ant-design/icons';
+
 import RightMenu from './RightMenu'
-import { Drawer, Button } from 'antd';
-class Navbar extends Component {
-    state = {
-        current: 'mail',
-        visible: false
+
+const { Search } = Input;
+const Navbar = () => {
+    const [isSearch, setIsSearch] = useState(false);
+    const [isDrawer, setIsDrawer] = useState(false)
+
+    const showDrawer = () => {
+        setIsDrawer(true)
     }
-    showDrawer = () => {
-        this.setState({
-            visible: true,
-        });
+    const onClose = () => {
+        setIsDrawer(false)
     };
-    onClose = () => {
-        this.setState({
-            visible: false,
-        });
-    };
-    render() {
-        return (
-            <nav className="menuBar">
+
+    return (
+        <nav className="menuBar">
+            <Link href='/' as='/'>
                 <div className="logo">
-                    <a href="">logo</a>
+                    <a >logo</a>
                 </div>
-                <div className="menuCon" style={{ width: '100%' }}>
-                    <div className="rightMenu">
-                        <RightMenu />
-                    </div>
-                    <Button className="barsMenu" type="primary" onClick={this.showDrawer}>
-                        <span className="barsBtn"></span>
-                    </Button>
-                    <Drawer
-                        title="Logo"
-                        placement="right"
-                        closable={false}
-                        onClose={this.onClose}
-                        visible={this.state.visible}
-                    >
-                        {/* <LeftMenu vertical /> */}
-                        <RightMenu />
-                    </Drawer>
+            </Link>
+            <div style={{ width: '100%', marginRight: '20px', float: 'right', display: 'flex', justifyContent: 'flex-end' }}>
+                {isSearch ?
+                    <Search
+                        placeholder="search article"
+                        enterButton="Search"
+                        size="large"
+                        style={{ width: '100%' }}
+                        onSearch={value => console.log(value)}
+                        suffix={<CloseOutlined onClick={() => setIsSearch(false)} />}
+                    />
+                    : <Button icon={<SearchOutlined />} onClick={() => setIsSearch(true)}>Search</Button>}
+            </div>
+            <div className="menuCon">
+                <div className="rightMenu">
+                    <RightMenu />
                 </div>
-            </nav>
-        );
-    }
+                <Button className="barsMenu" type="primary" onClick={showDrawer}>
+                    <span className="barsBtn"></span>
+                </Button>
+                <Drawer
+                    title="Logo"
+                    placement="right"
+                    closable={false}
+                    onClose={onClose}
+                    visible={isDrawer}
+                >
+                    {/* <LeftMenu vertical /> */}
+                    <RightMenu />
+                </Drawer>
+            </div>
+        </nav>
+    );
 }
+
 export default Navbar;

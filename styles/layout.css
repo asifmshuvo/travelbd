@@ -19,7 +19,7 @@
   text-transform: capitalize;
 }
 .menuCon{
-  width: calc(100% - 150px);
+  /* width: calc(100% - 150px); */
   float: left;
 }
 .menuCon .ant-menu-item{
