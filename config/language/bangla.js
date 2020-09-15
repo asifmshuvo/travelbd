@@ -296,18 +296,105 @@ export const mainMenu = [
     },
     {
         name: "অন্যদেশ",
-        slug: 'othercountries'
+        slug: '',
+        nodes: [
+            {
+                name: "ভারত",
+                slug: 'india'
+            },
+            {
+                name: "নেপাল",
+                slug: 'nepal'
+            },
+            {
+                name: "ভুটান",
+                slug: 'vutan'
+            },
+            {
+                name: "সিঙ্গাপুর",
+                slug: 'singapore'
+            },
+            {
+                name: "থাইল্যান্ড",
+                slug: 'thiland'
+            },
+            {
+                name: "মালয়েশিয়া",
+                slug: 'malaysia'
+            },
+            {
+                name: "ইন্দোনেশিয়া",
+                slug: 'indonesia'
+            },
+            {
+                name: "ইউরোপ",
+                slug: 'europe'
+            },
+            {
+                name: "আরো দেশ",
+                slug: 'othercountries'
+            },
+
+        ]
     },
     {
         name: "জনপ্রিয়",
-        slug: 'populer'
+        slug: 'populer',
+        nodes: [
+            {
+                name: "দর্শনীয় স্থান",
+                slug: 'historic_place'
+            },
+            {
+                name: "ঐতিহাসিক স্থান",
+                slug: 'historic_place'
+            },
+            {
+                name: "খাবার ও রেস্টুরেন্ট",
+                slug: 'food_and_restourant'
+            },
+            {
+                name: "হোটেল ও রিসোর্ট",
+                slug: 'hotel_and_resort'
+            },
+            {
+                name: "পর্যটন",
+                slug: 'tourism'
+            },
+        ]
     },
     {
-        name: "ভ্রমন ফিচার",
-        slug: 'travelfeature'
+        name: "ফিচার",
+        slug: 'travelfeature',
+        nodes: [
+            {
+                name: "টিবিডি স্পেশাল",
+                slug: 'tbd_special'
+            },
+            {
+                name: "তারুণ্য ও প্রযুক্তি",
+                slug: 'youth_and_technology'
+            },
+            {
+                name: "ইন্টারভিউ",
+                slug: 'interview'
+            },
+        ]
+    },
+    {
+        name: "ইতিহাস",
+        slug: 'history'
     },
     {
         name: "পর্যটন নিউজ",
         slug: 'travel_news'
-    }
+    },
+    {
+        name: "রিভিউ",
+        slug: 'review'
+    },
+    {
+        name: "কুইজ",
+        slug: 'quize'
+    },
 ]
