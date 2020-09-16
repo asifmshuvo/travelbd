@@ -1,12 +1,15 @@
 import React, { Component, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Drawer, Button, Input } from 'antd';
 import { SearchOutlined, CloseOutlined } from '@ant-design/icons';
 
 import RightMenu from './RightMenu'
+import { errorMessage } from 'custom';
 
 const { Search } = Input;
 const Navbar = () => {
+    const router = useRouter()
     const [isSearch, setIsSearch] = useState(false);
     const [isDrawer, setIsDrawer] = useState(false)
 
@@ -17,6 +20,12 @@ const Navbar = () => {
         setIsDrawer(false)
     };
 
+    const onSearch = (searchStr) => {
+        if (searchStr) router.push({
+            pathname: '/search',
+            query: { query: searchStr },
+        })
+    }
     return (
         <nav className="menuBar">
             <Link href='/' as='/'>
@@ -31,7 +40,7 @@ const Navbar = () => {
                         enterButton="Search"
                         size="large"
                         style={{ width: '100%' }}
-                        onSearch={value => console.log(value)}
+                        onSearch={onSearch}
                         suffix={<CloseOutlined onClick={() => setIsSearch(false)} />}
                     />
                     : <Button icon={<SearchOutlined />} onClick={() => setIsSearch(true)}>Search</Button>}
