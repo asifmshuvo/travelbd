@@ -7,11 +7,11 @@ const Article = () => {
     const { category } = router.query;
     console.log('Log: Article -> category', category)
 
-    if (category === 'video' || category === 'feature_video') {
-        return <SingleVideo />
-    } else {
-        return <ArticleBody />
-    }
+    // if (category === 'video') {
+    //     return <SingleVideo />
+    // } else {
+    return <ArticleBody />
+    // }
 };
 
 export default Article;

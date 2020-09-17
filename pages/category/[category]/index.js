@@ -8,12 +8,12 @@ const Category = () => {
     const router = useRouter();
     const { category } = router.query;
 
-    if (category === 'video') {
-        return <VideoCategoryPage />
-    }
-    if (category === 'recent') {
-        return <AllArticles />
-    }
+    // if (category === 'video') {
+    //     return <VideoCategoryPage />
+    // }
+    // if (category === 'recent') {
+    //     return <AllArticles />
+    // }
     if (category === 'bangladesh') {
         return <Bangladesh />
     }
