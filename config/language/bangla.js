@@ -307,7 +307,7 @@ export const mainMenu = [
                 slug: 'nepal'
             },
             {
-                name: "ভুটান",
+                name: "ভূটান",
                 slug: 'vutan'
             },
             {
