@@ -9,7 +9,7 @@ import { ShowMore, Articles } from 'components/custom';
 import { TabNavigator } from 'components/layout/nav-components/TabNavigator';
 import { errorMessage, Loader, Empty } from "custom";
 
-export default function getRecentPosts() {
+export default function getRecentPosts({ slug }) {
     const router = useRouter();
     const { category } = router.query
     console.log('Log: getRecentPosts -> category', category)
@@ -17,7 +17,7 @@ export default function getRecentPosts() {
     const { loading, error, data } = useQuery(GET_RECENT_POST, {
         variables: {
             first: 9,
-            category_slug: category
+            category_slug: category || slug
         }
     })
     if (loading) return <Loader />
@@ -25,7 +25,7 @@ export default function getRecentPosts() {
     if (data) {
         const posts = data?.posts?.nodes ?? []
         const endCursor = data?.posts?.pageInfo?.endCursor ?? ''
-        return posts?.length <= 0 ? <Empty /> : <CategoryPage recPosts={posts} cursor={endCursor} catgSlug={category} />
+        return posts?.length <= 0 ? <Empty /> : <CategoryPage recPosts={posts} cursor={endCursor} catgSlug={category || slug} />
     }
 }
 

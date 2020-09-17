@@ -10,7 +10,7 @@ export const TabNavigator = ({ setTabMenu }) => {
         {
             name: 'সকল লেখা',
             icon: <SortAscendingOutlined />,
-            key: 'recent'
+            key: ''
         },
         {
             name: 'ভিডিও',
