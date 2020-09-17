@@ -26,3 +26,13 @@
 
 }
 }
+
+.card{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    & > div {
+        padding: 10px !important;
+    }
+}

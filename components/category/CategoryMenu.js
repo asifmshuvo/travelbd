@@ -1,7 +1,9 @@
 import dynamic from 'next/dynamic';
 
-import { Row, Button, Col } from 'antd';
+import { Row, Button, Col, Card, Avatar } from 'antd';
 const DynamicIcon = dynamic(() => import('@ant-design/icons'))
+
+const { Meta } = Card;
 
 const HistorySvg = () => (
     <svg width="1em" height="1em" aria-hidden="true" viewBox="0 0 640 512" focusable="false" data-prefix="fas" data-icon="mosque" class="svg-inline--fa fa-mosque fa-w-20"><path fill="currentColor" d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z"></path></svg>
@@ -37,33 +39,41 @@ export const CategoryMenu = () => {
 
     const menuItem = [
         {
-            name: 'ইতিহাস ও সংস্কৃতি',
-            icon: <HistoryIcon style={{ fontSize: '32px', opacity: 0.8, marginTop: '2px' }} />
+            name: 'ইতিহাস',
+            icon_addrs: '/assets/category/category_header/history.svg'
         },
         {
             name: 'দর্শনীয় স্থান',
-            icon: <PlaceIcon style={{ fontSize: '32px', opacity: 0.8, marginTop: '2px' }} />
+            icon_addrs: '/assets/category/category_header/location.svg'
         },
         {
             name: 'খাবার',
-            icon: <FoodIcon style={{ fontSize: '32px', opacity: 0.8, marginTop: '2px' }} />
+            icon_addrs: '/assets/category/category_header/food.svg'
         },
         {
             name: 'ভ্রমন গল্প',
-            icon: <ArticleIcon style={{ fontSize: '32px', opacity: 0.8, marginTop: '2px' }} />
+            icon_addrs: '/assets/category/category_header/travel.svg'
         }
     ]
 
     const renderTabMenu = (MenuItem) => {
         return menuItem.map((menu, i) => (
-            <Button key={i} style={{ height: '85px', minWidth: '85px', borderRadius: '20px' }} className={styles.TabNavBtn} >
-                {
-                    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '5px 0' }}>
-                        <div style={{ minWidth: '32px' }}>{menu.icon}</div>
-                        <span>{menu.name}</span>
-                    </div>
-                }
-            </Button>
+            <Card
+                hoverable
+                style={{ minWidth: 95, minHeight: 95, borderRadius: '20px', margin: '5px' }}
+                className={styles.card}
+                cover={<Avatar size={44} src={menu.icon_addrs} style={{ marginBottom: '-14px' }} />}
+            >
+                <Meta title={<center><span style={{ fontSize: '14px', fontWeight: '400' }}>{menu.name}</span></center>} />
+            </Card>
+            // <Button key={i} style={{ height: '85px', minWidth: '85px', borderRadius: '20px' }} className={styles.TabNavBtn} >
+            //     {
+            //         <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '5px 0' }}>
+            //             <div style={{ minWidth: '32px' }}>{menu.icon}</div>
+            //             <span>{menu.name}</span>
+            //         </div>
+            //     }
+            // </Button>
         ))
     }
 
