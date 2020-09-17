@@ -2,10 +2,12 @@ import { useRouter } from "next/router";
 import dynamic from 'next/dynamic';
 import Link from 'next/link'
 
-import { Row, Button, Col } from 'antd';
+import { Row, Button, Col, Card } from 'antd';
+
 const DynamicIcon = dynamic(() => import('@ant-design/icons'))
 import { mainMenu } from 'config/language/bangla';
 
+const { Meta } = Card;
 
 
 
@@ -20,6 +22,7 @@ const HistoryIcon = props => <DynamicIcon component={HistorySvg} {...props} />;
 
 
 import styles from '../CategoryMenu.module.scss';
+import divisionStyles from './Division.module.scss';
 
 
 const Division = () => {
@@ -34,14 +37,24 @@ const Division = () => {
     const renderTabMenu = (MenuItem) => {
         return DistrictList.map((menu, i) => (
             <Link as={`/category/${menu.slug}`} href="/category/[category]" >
-                <Button key={i} style={{ height: '85px', minWidth: '85px', borderRadius: '20px' }} className={styles.TabNavBtn} >
+                <Card
+                    hoverable
+                    style={{ minWidth: 135, minHeight: 140, borderRadius: '20px', margin: '5px' }}
+                    className={divisionStyles.card}
+                // cover={<img alt="" src="" />}
+                >
+                    <Meta title={<center>{menu.name}</center>} />
+                </Card>
+
+                {/* <Button key={i} style={{ height: '85px', minWidth: '85px', borderRadius: '20px' }} className={styles.TabNavBtn} >
                     {
                         <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '5px 0' }}>
                             {/* <div style={{ minHeigth: '28px' }}>{menu.icon || ''}</div> */}
-                            <span>{menu.name}</span>
+                {/* <span>{menu.name}</span>
                         </div>
                     }
-                </Button>
+                </Button> */}
+
             </Link>
         ))
     }

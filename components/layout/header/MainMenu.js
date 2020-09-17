@@ -79,7 +79,7 @@ const MainMenu = ({ vertical }) => {
 
     return (
         <div className={styles.mainMenuWrapper}>
-            <div style={{ minWidth: '700px' }}>
+            <div style={{ minWidth: '712px' }}>
                 <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.desktopMenu}>
                     {menu}
                 </Menu>
