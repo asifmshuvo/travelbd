@@ -3,27 +3,33 @@
     justify-content: center;
     align-items: center;
     // background:#fff;
-    margin: 24px 0;
+    margin: 24px 15px;
+    overflow-x: auto;
+    scroll-behavior: auto;
 
     .tabNavigatorWrapper{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         margin: 10px 0;
 
-    .TabNavBtn {
-        color: #292B2C;
-        margin: 0 5px 10px 5px;
-      
-    }
+        .TabNavBtn {
+            color: #292B2C;
+            margin: 0 5px 10px 5px;
+        
+        }
+        
+        .TabNavBtn:active{
+            top: 5px;
+        }
+        .TabNavBtn:hover,.TabNavBtn:focus {
+            background: #292B2C !important;
+            color:#fff
+        }
     
-    .TabNavBtn:active{
-        top: 5px;
     }
-    .TabNavBtn:hover,.TabNavBtn:focus {
-        background: #292B2C !important;
-        color:#fff
-    }
-
 }
+
+@media (max-width:525px) {
+    .tabNavigatorContainer{
+        justify-content: flex-start;
+    }
 }
