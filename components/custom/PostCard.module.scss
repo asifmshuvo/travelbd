@@ -9,6 +9,11 @@ margin: 0 0 20px;
     // }
 }
 
+.card{
+    width: 296px;
+    margin: 10px; 
+}
+
 .cardTitle{
     font-size: 1.3rem;
     font-weight: 500;
@@ -59,3 +64,15 @@ margin: 0 0 20px;
 // .date{
 //     font-size: 12px;
 // }
+
+
+@media (max-width:767px) and (min-width: 400px){
+    .card{
+        width: 100%;  
+    }
+    .cardImage {
+        height: 230px;
+        // max-height: 240px;
+    }
+
+}

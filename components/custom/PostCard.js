@@ -31,8 +31,8 @@ export const PostCard = ({ article }) => {
     <Link as={`/category/${(categorySlug || 'others')}/${(article?.id ?? '')}`} href="/category/[category]/[id]" >
       <Card
         hoverable
-        style={{ width: 296, margin: '10px' }}
         bodyStyle={{ padding: '15px' }}
+        className={styles.card}
         cover={<img loading="lazy" className={styles.cardImage} alt="‎ " src={cardImageSource} onerror="this.style.display='none'" />}
       >
         <div className={styles.categoryContainer}>
@@ -49,13 +49,13 @@ export const PostCard = ({ article }) => {
 
         <Meta
           title={<span className={styles.cardTitle}>{article?.title ?? ''}</span>}
-          // description={
-          //   <div className={styles.descriptionWrapper}>
-          //     <span className={styles.date}>{`${(dayjs(article?.date).format('MMM-DD-YYYY'))}`}</span>
-          //     <span className={styles.dot}>.</span>
-          //     {/* <span className={styles.readingCount}>33 বার পড়া হয়েছে</span> */}
-          //   </div>
-          // }
+        // description={
+        //   <div className={styles.descriptionWrapper}>
+        //     <span className={styles.date}>{`${(dayjs(article?.date).format('MMM-DD-YYYY'))}`}</span>
+        //     <span className={styles.dot}>.</span>
+        //     {/* <span className={styles.readingCount}>33 বার পড়া হয়েছে</span> */}
+        //   </div>
+        // }
         />
       </Card>
     </Link>
