@@ -28,11 +28,14 @@ const Navbar = () => {
     }
     return (
         <nav className="menuBar">
-            <Link href='/' as='/'>
-                <div className="logo">
-                    <a >logo</a>
-                </div>
-            </Link>
+            {!isSearch ?
+                <Link href='/' as='/'>
+                    <a className="logo">
+                        {/* <div className="logo"></div> */}
+                    </a>
+                </Link>
+                : null}
+
             <div style={{ width: '100%', marginRight: '20px', float: 'right', display: 'flex', justifyContent: 'flex-end' }}>
                 {isSearch ?
                     <Search
@@ -63,6 +66,24 @@ const Navbar = () => {
                     <RightMenu />
                 </Drawer>
             </div>
+
+
+            <style jsx>
+                {`
+                    .logo {
+                        background: url(/assets/logo/tbd_logo.png);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        height: 50px;
+                        width: 150px;
+                        margin: 5px 15px 5px 0;
+                    }
+                    .menuBar{
+                        min-height: 61px;
+                    }
+                `}
+            </style>
         </nav>
     );
 }
