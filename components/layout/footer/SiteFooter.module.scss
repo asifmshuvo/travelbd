@@ -3,7 +3,7 @@
     position: relative;
     bottom: 0;
 	width:100%;
-	padding: 0 25px 25px 25px;
+	padding: 0 25px 0 25px;
 }
 
 .footerContainer {
@@ -34,6 +34,11 @@
 .category{
 	display: flex;
 	justify-content: space-between;
+}
+
+.linkSection{
+	display: flex;
+	flex-direction: column;
 }
 
 .socialLinks {

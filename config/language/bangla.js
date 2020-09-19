@@ -398,3 +398,26 @@ export const mainMenu = [
         slug: 'quize'
     },
 ]
+
+export const footerMenu = [
+    {
+        name: "ট্রাভেলবিডি স্পেশাল",
+        slug: 'tbd_special'
+    },
+    {
+        name: "রিভিউ",
+        slug: 'review'
+    },
+    {
+        name: "কুইজ",
+        slug: 'quize'
+    },
+    {
+        name: 'ট্রাভেলস ডিলস',
+        slug: 'travel_deals'
+    },
+    {
+        name: 'সার্ভিস',
+        slug: 'service'
+    },
+]
