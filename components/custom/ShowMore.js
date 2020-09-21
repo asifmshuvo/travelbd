@@ -8,7 +8,7 @@ export const ShowMore = (props) => {
             </div>
             <style jsx>
                 {`
-                margin: 40px auto;
+                margin: 40px auto 50px auto;
                 color: rgb(174, 174, 178);
                 font-size: 22px;
                 line-height: 28px;

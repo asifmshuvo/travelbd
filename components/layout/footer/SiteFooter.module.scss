@@ -4,7 +4,7 @@
     bottom: 0;
 	width:100%;
 	padding: 0 25px 0 25px;
-	border-top: 1px solid #656565;
+	border-top: 1px solid #ccc;
 }
 
 .footerContainer {
@@ -25,10 +25,6 @@
 }
 
 
-.socialLinks {
-	margin:1rem 0;
-	width:200px;
-}
 // .sociallinks a {
 // 	background:#666;
 // 	color:#fff;
@@ -56,8 +52,11 @@
 }
 
 .socialLinks {
+	margin:1rem 0;
+	width:152px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .lightColor {
