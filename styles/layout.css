@@ -21,6 +21,9 @@
 .menuCon{
   /* width: calc(100% - 150px); */
   float: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .menuCon .ant-menu-item{
   padding: 0px 5px;
@@ -44,7 +47,7 @@
   float: right;
   height: 32px;
   padding: 6px;
-  display: none;
+  display: inline-block;
   background: none;
 }
 .barsBtn{
@@ -81,10 +84,10 @@
   border-bottom-color: transparent;
 }
 
-@media(max-width: 767px){
-  .barsMenu{
+@media(max-width: 768px){
+  /* .barsMenu{
     display: inline-block;
-  }
+  } */
   .leftMenu,.rightMenu{
     display: none;
   }

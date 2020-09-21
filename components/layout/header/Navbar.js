@@ -49,21 +49,25 @@ const Navbar = () => {
                     : <Button icon={<SearchOutlined />} onClick={() => setIsSearch(true)}>Search</Button>}
             </div>
             <div className="menuCon">
-                <div className="rightMenu">
+                <div className="rightMenu" >
                     <RightMenu />
                 </div>
                 <Button className="barsMenu" type="primary" onClick={showDrawer}>
                     <span className="barsBtn"></span>
                 </Button>
                 <Drawer
-                    title="Logo"
+                    title={<img className="drawerLogo" src="/assets/logo/tbd_logo.png" />}
                     placement="right"
-                    closable={false}
+                    closable={true}
                     onClose={onClose}
                     visible={isDrawer}
                 >
                     {/* <LeftMenu vertical /> */}
-                    <RightMenu />
+                    <div className="mt-2">
+                        <div className="drawerlngbtn" style={{ display: 'flex', justifyContent: 'center' }}>
+                            <RightMenu />
+                        </div>
+                    </div>
                 </Drawer>
             </div>
 
@@ -79,8 +83,27 @@ const Navbar = () => {
                         width: 180px;
                         margin: 2px 15px 2px 0;
                     }
+
+                    @media (min-width:768px){
+                        .logo {
+                            height: 48px;
+                            width: 144px;
+                            min-width: 144px;
+                            margin-left: calc(50% - 72px);
+                        }
+                        .drawerlngbtn {
+                            display: none !important;
+                        }
+                    }
+
                     .menuBar{
                         min-height: 61px;
+                    }
+
+                    .drawerLogo{
+                        height: 30px;
+                        width: 90px;
+                        object-fit: contain;
                     }
                 `}
             </style>
