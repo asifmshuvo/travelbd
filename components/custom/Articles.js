@@ -10,7 +10,7 @@ export const Articles = ({ articles, video }) => {
 
   return (
     <Row className="mt-4 mb-4">
-      <Col span={20} offset={2} sm={{ span: 22, offset: 1 }} xl={{ span: 18, offset: 3 }}>
+      <Col xs={{ span: 22, offset: 1 }} xl={{ span: 18, offset: 3 }}>
         <Row style={{ display: 'flex', justifyContent: 'center' }}>
           {renderArticleCard(articles)}
         </Row>

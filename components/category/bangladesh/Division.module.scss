@@ -3,7 +3,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     & > div {
         padding: 12px !important;
+    }
+
+    div[class^="ant-card-cover"] {
+        padding: 0;
     }
 }

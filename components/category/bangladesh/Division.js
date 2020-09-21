@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import dynamic from 'next/dynamic';
 import Link from 'next/link'
 
-import { Row, Button, Col, Card } from 'antd';
+import { Row, Button, Col, Card, Avatar } from 'antd';
 
 const DynamicIcon = dynamic(() => import('@ant-design/icons'))
 import { mainMenu } from 'config/language/bangla';
@@ -41,7 +41,7 @@ const Division = () => {
                     hoverable
                     style={{ minWidth: 135, minHeight: 140, borderRadius: '20px', margin: '5px' }}
                     className={divisionStyles.card}
-                // cover={<img alt="" src="" />}
+                    cover={<Avatar shape="square" size={54} className={styles.cardMapIcon} src={`/assets/district_icon/${menu.slug}.svg`} />}
                 >
                     <Meta title={<center>{menu.name}</center>} />
                 </Card>

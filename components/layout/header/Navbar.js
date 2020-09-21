@@ -75,9 +75,9 @@ const Navbar = () => {
                         background-repeat: no-repeat;
                         background-size: contain;
                         background-position: center;
-                        height: 50px;
-                        width: 150px;
-                        margin: 5px 15px 5px 0;
+                        height: 60px;
+                        width: 180px;
+                        margin: 2px 15px 2px 0;
                     }
                     .menuBar{
                         min-height: 61px;

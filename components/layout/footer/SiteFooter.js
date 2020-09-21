@@ -39,7 +39,7 @@ const SiteFooter = () => {
                 <div className={styles.footerContainer}>
                     <Row>
                         <Col span={24} md={{ span: 7, offset: 2 }} className="mb-3">
-                            <Title level={3} style={{ color: '#fff' }}>TRAVE BANGLADESH</Title>
+                            <Title level={3} style={{ color: '#fff' }}>TRAVEL BANGLADESH</Title>
                             <p className={styles.lightColor}>
                                 ট্রাভেল বাংলাদেশ ট্রাভেলারদের জন্য দেশ-বিদেশে ভ্রমন বিষয়ক যাবতীয় তথ্য নিয়ে পূর্ণাঙ্গ পোর্টাল এবং ট্রাভেল বিষয়ক অন্য সব ধরণের প্রমোশনাল সার্ভিস প্রদানকারী প্লাটফর্ম।
                             </p>

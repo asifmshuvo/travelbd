@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link'
 
-import { Row, Button, Col, Card } from 'antd';
+import { Row, Button, Col, Card, Avatar } from 'antd';
 const DynamicIcon = dynamic(() => import('@ant-design/icons'))
 import { mainMenu } from 'config/language/bangla';
 
@@ -36,7 +36,7 @@ const Bangladesh = () => {
                     hoverable
                     style={{ minWidth: 150, minHeight: 150, borderRadius: '20px', margin: '5px' }}
                     className={divisionStyles.card}
-                // cover={<img alt="" src="" />}
+                    cover={<Avatar shape="square" size={54} className={divisionStyles.cardMapIcon} src={`/assets/division_icon/${menu.slug}.svg`} />}
                 >
                     <Meta title={<center>{menu.name}</center>} />
                 </Card>
