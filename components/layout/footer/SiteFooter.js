@@ -15,8 +15,8 @@ const SiteFooter = () => {
                 footerMenu.map(menu => {
                     return (
                         <Link as={`/category/${menu.slug}`} href="/category/[category]" >
-                            <a>{menu.name}</a>
-                        </Link>
+                            <strong><a>{menu.name}</a></strong>
+                        </Link >
                     )
                 })
                 : null
@@ -39,20 +39,21 @@ const SiteFooter = () => {
                 <div className={styles.footerContainer}>
                     <Row>
                         <Col span={24} md={{ span: 7, offset: 2 }} className="mb-3">
-                            <Title level={3} style={{ color: '#fff' }}>TRAVEL BANGLADESH</Title>
-                            <p className={styles.lightColor}>
+                            <img className={styles.footerSiteLogo} src="/assets/logo/tbd_footer_logo.svg" alt="" />
+                            <p><b>
                                 ট্রাভেল বাংলাদেশ ট্রাভেলারদের জন্য দেশ-বিদেশে ভ্রমন বিষয়ক যাবতীয় তথ্য নিয়ে পূর্ণাঙ্গ পোর্টাল এবং ট্রাভেল বিষয়ক অন্য সব ধরণের প্রমোশনাল সার্ভিস প্রদানকারী প্লাটফর্ম।
+                            </b>
                             </p>
 
                             <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-                                <p className={styles.lightColor}>যোগাযোগঃ &nbsp;</p>
+                                <p><b>যোগাযোগঃ</b> &nbsp;</p>
                                 <p><a href="mailto:contact@travelbd.xyz" target="_top">contact@travelbd.xyz</a></p>
                             </div>
 
-                            <p className={styles.lightColor}>Copyright © 2020 All Rights Reserved. By <a href="http://travelbd.xyz">Trvale Info Global Ltd.</a>
+                            <p >Copyright © 2020 All Rights Reserved. By <a href="http://travelbd.xyz">Trvale Info Global Ltd.</a>
                             </p>
                         </Col>
-                        <Col span={24} md={{ span: 7, offset: 1 }} className="mb-5">
+                        <Col span={24} md={{ span: 7, offset: 2 }} className="mb-5">
 
                             {/* <Col span={12}> */}
                             <div className={styles.linkSection}>
@@ -101,10 +102,12 @@ const SiteFooter = () => {
                                         </div>
                                     </div>
                                 </Col> */}
-
-
                         </Col>
-                        <Col span={24} md={5} >
+                        <div className={styles.backgroundLogoWrapper}>
+                            <div className={styles.footer_bg_logo}></div>
+                        </div>
+
+                        {/* <Col span={24} md={5} >
                             <div className={styles.contact}>
                                 <Title level={4} style={{ color: '#fff' }}>Sign up for our newsletter!</Title>
                                 <p className="light-color">Join our mailing list and get the latest updates</p>
@@ -116,7 +119,7 @@ const SiteFooter = () => {
                                     <Button style={{ width: '100%' }}>Subscribe</Button>
                                 </div>
                             </div>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </div>
             </footer>

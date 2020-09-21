@@ -1,23 +1,33 @@
 .footer{
-    background-color: black;
+    // background-color: black;
     position: relative;
     bottom: 0;
 	width:100%;
 	padding: 0 25px 0 25px;
+	border-top: 0.3px solid #656565;
 }
 
 .footerContainer {
 	padding-top:15px;
 	padding-bottom:12px;
 	font-size:0.8rem;
-	color:#fff !important;
+	// color:#fff !important;
 	margin-top:30px;
+}
+
+.footerSiteLogo{
+	height: 80px;
+    width: auto;
+	max-width: 220px;
+	margin-top: -25px;
+    margin-left: -6px;
+    object-fit: contain;
 }
 
 
 .socialLinks {
 	margin:1rem 0;
-	width:235px;
+	width:200px;
 }
 // .sociallinks a {
 // 	background:#666;
@@ -39,6 +49,10 @@
 .linkSection{
 	display: flex;
 	flex-direction: column;
+
+	& a:hover{
+		opacity: 0.8;
+	}
 }
 
 .socialLinks {
@@ -50,9 +64,22 @@
 color: rgb(174, 174, 178)
 }
 
-.footer a {
-	color: white;
+.backgroundLogoWrapper{
+	position: absolute;
+	right: 0;
+    top: -60px;
+
+	.footer_bg_logo{
+		background: url("/assets/logo/tbd_Icon.svg");
+		height: 335px;
+    	width: 420px;
+		background-repeat: no-repeat;
+	}
 }
+
+// .footer a {
+// 	color: white;
+// }
 
 /* .mfooter{
 	position: absolute;
@@ -67,8 +94,8 @@ color: rgb(174, 174, 178)
 .socialLinks2{
 margin-top: 15px;
 }
-.socialLinks2>a{
-	padding: 8px;
+.socialLinks2 > a{
+	padding: 4px;
 }
 
 .mobile-nav-item {
@@ -78,4 +105,23 @@ margin-top: 15px;
 	white-space: nowrap;
 	width: 100%;
 	scroll-behavior: smooth;
+}
+
+
+@media (max-width:1180px) and (min-width: 767px) {
+	.backgroundLogoWrapper{
+		right: 5px;
+    	top: -38px;
+	
+		.footer_bg_logo{
+			height: 300px;
+    		width: 300px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.backgroundLogoWrapper{
+		display: none;
+	}
 }
