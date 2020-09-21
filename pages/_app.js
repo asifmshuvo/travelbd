@@ -10,6 +10,7 @@ import '../styles/vars.css'
 import '../styles/global.css'
 import '../styles/layout.css'
 import '../styles/antd.less'
+import '../styles/overridden_ant_style.css'
 import 'node_modules/video-react/styles/scss/video-react.scss'
 
 

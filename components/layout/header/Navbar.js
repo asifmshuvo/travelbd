@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Drawer, Button, Input } from 'antd';
-import { SearchOutlined, CloseOutlined } from '@ant-design/icons';
+import { SearchOutlined, CloseOutlined, MenuOutlined } from '@ant-design/icons';
 
 import RightMenu from './RightMenu'
 import { errorMessage } from 'custom';
@@ -52,8 +52,8 @@ const Navbar = () => {
                 <div className="rightMenu" >
                     <RightMenu />
                 </div>
-                <Button className="barsMenu" type="primary" onClick={showDrawer}>
-                    <span className="barsBtn"></span>
+                <Button className="barsMenu" icon={<MenuOutlined />} onClick={showDrawer}>
+                    {/* <span className="barsBtn"></span> */}
                 </Button>
                 <Drawer
                     title={<img className="drawerLogo" src="/assets/logo/tbd_logo.png" />}

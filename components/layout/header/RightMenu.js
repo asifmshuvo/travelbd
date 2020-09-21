@@ -11,7 +11,7 @@ class RightMenu extends Component {
         return (
             <Menu mode="horizontal">
                 <Menu.Item key="mail">
-                    <a href="">{<span><Avatar shape="square" size={32} icon={<TranslationOutlined />} src="/assets/logo/translation_icon.png" /> En</span>}</a>
+                    <a href="">{<span><Avatar shape="square" size={32} style={{ opacity: '0.9' }} icon={<TranslationOutlined />} src="/assets/logo/translation_icon.png" /> En</span>}</a>
                 </Menu.Item>
                 {/* <Menu.Item key="app">
                     <a href="">Signup</a>

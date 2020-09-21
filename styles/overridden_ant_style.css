@@ -1,17 +1,7 @@
 /* antd custom design */
 
-.ant-layout-header {
-    padding: 0 25px !important;
-    }
-
 
 /* Selected Header Menu Item */
-.ant-menu.ant-menu-dark .ant-menu-item-selected{
-    background-color: transparent;
-    font-size: 1rem;
-}
-
-.ant-menu.ant-menu-dark .ant-menu-item-selected > svg {
-    width: 1rem;
-    height: 1rem;
-}
+/* .ant-menu-vertical .ant-menu-submenu-selected a{
+    color: #fff;
+} */

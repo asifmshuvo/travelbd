@@ -80,10 +80,10 @@ const MainMenu = ({ vertical }) => {
     return (
         <div className={styles.mainMenuWrapper}>
             <div style={{ minWidth: '712px' }}>
-                <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.desktopMenu}>
+                <Menu mode={vertical ? 'vertical' : 'horizontal'} selectedKeys={['0']} className={styles.desktopMenu}>
                     {menu}
                 </Menu>
-                <Menu mode={vertical ? 'vertical' : 'horizontal'} className={styles.mobileMenu}>
+                <Menu mode={vertical ? 'vertical' : 'horizontal'} selectedKeys={['0']} className={styles.mobileMenu}>
                     {mobileMenu}
                 </Menu>
             </div>
