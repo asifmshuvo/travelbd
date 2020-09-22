@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 
-import { Card } from 'antd';
+import { Avatar, Card } from 'antd';
 import { BookOutlined } from '@ant-design/icons';
 import styles from './PostCard.module.scss';
 import dayjs from 'dayjs';
@@ -44,7 +44,7 @@ export const PostCard = ({ article }) => {
             <span className={styles.category}>{categoryName}</span>
           }
           {/* <BookOutlined style={{ fontSize: '18px' }} /> */}
-          <img src="/assets/logo/bookmark.svg" alt="🖤" />
+          <Avatar shape="square" src="/assets/logo/new_bookmark.svg" style={{ width: '17px', height: '21px' }} />
         </div>
 
         <Meta

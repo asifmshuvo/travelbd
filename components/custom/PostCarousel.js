@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Link from 'next/link'
 
-import { Carousel, Typography, Space, Spin } from "antd";
+import { Carousel, Typography, Space, Spin, Avatar } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 import { useQuery } from '@apollo/client';
@@ -66,7 +66,8 @@ const PostCarousel = ({ postData }) => {
                             </Link>
                             <Title ellipsis={{ rows: 2 }} level={4} className={styles.carouselTitle}>{article?.title ?? ''}</Title>
                             <div className={styles.meta}>
-                                <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" />
+                                {/* <img className={styles.bookmarkIcon} src="/assets/logo/carousel_bookmark.svg" alt="🖤" /> */}
+                                <Avatar shape="square" src="/assets/logo/new_bookmark.svg" style={{ width: '17px', height: '21px', marginRight: 5, filter: 'grayscale(1) invert(1)' }} />
                                 <span className={styles.postDate}>{`${(dayjs(article?.date).format('MMM-DD-YYYY'))}`}</span>
                             </div>
                         </div>
