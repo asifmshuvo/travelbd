@@ -60,9 +60,8 @@ export const CategoryMenu = () => {
         return menuItem.map((menu, i) => (
             <Card
                 hoverable
-                style={{ minWidth: 95, minHeight: 95, borderRadius: '20px', margin: '5px' }}
                 className={styles.card}
-                cover={<Avatar size={44} src={menu.icon_addrs} style={{ marginBottom: '-14px' }} />}
+                cover={<Avatar size={44} src={menu.icon_addrs} className={styles.avatar} />}
             >
                 <Meta title={<center><span style={{ fontSize: '14px', fontWeight: '400' }}>{menu.name}</span></center>} />
             </Card>

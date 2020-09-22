@@ -8,6 +8,7 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 10px;
+        min-width: 100vw;
 
     .TabNavBtn {
         color: #292B2C;
@@ -27,12 +28,39 @@
 }
 }
 
-.card{
+.card {
+    min-width: 95px; 
+    min-height: 95px;
+    border-radius: 20px;
+    margin: 5px;
+
     display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     & > div {
         padding: 10px !important;
+    }
+
+    .avatar{
+        margin-bottom: -14px;
+    }
+}
+
+@media (max-width: 428px){
+    .card {
+        min-width: 80px; 
+        min-height: 80px;
+        border-radius: 15px;
+        margin: 5px;
+    
+        & > div {
+            padding: 5px !important;
+        }
+
+        .avatar{
+            margin-bottom: -9px;
+        }
     }
 }
