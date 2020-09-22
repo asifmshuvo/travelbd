@@ -421,3 +421,37 @@ export const footerMenu = [
         slug: 'service'
     },
 ]
+
+
+export const drawerMenu = [
+    {
+        name: "অ্যাকাউন্ট",
+        slug: '',
+        nodes: [
+            {
+                name: "সাইন আপ",
+                slug: ''
+            },
+            {
+                name: "সাইন ইন",
+                slug: ''
+            },
+
+        ]
+    },
+    {
+        name: "অবদান",
+        slug: '',
+        nodes: [
+            {
+                name: "আপনিও লিখুন",
+                slug: ''
+            },
+            {
+                name: "নীতিমালা",
+                slug: ''
+            },
+
+        ]
+    }
+]

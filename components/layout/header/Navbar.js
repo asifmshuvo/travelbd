@@ -7,6 +7,8 @@ import { SearchOutlined, CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import RightMenu from './RightMenu'
 import { errorMessage } from 'custom';
 
+import DrawerMenu from './DrawerMenu';
+
 const { Search } = Input;
 const Navbar = () => {
     const router = useRouter()
@@ -64,9 +66,10 @@ const Navbar = () => {
                 >
                     {/* <LeftMenu vertical /> */}
                     <div className="mt-2">
-                        <div className="drawerlngbtn" style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div className="mb-2" className="drawerlngbtn" style={{ display: 'flex', justifyContent: 'center' }}>
                             <RightMenu />
                         </div>
+                        <DrawerMenu />
                     </div>
                 </Drawer>
             </div>
