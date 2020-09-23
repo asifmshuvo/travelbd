@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Row, Button } from 'antd';
+import { Row, Button, Avatar } from 'antd';
 import { SortAscendingOutlined, ReadOutlined, VideoCameraOutlined, CarOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 
 import styles from './TabNavigator.module.scss';
@@ -10,21 +10,25 @@ export const TabNavigator = ({ setTabMenu }) => {
         {
             name: 'সকল লেখা',
             icon: <SortAscendingOutlined />,
+            bottom_icon: '/assets/mobile_footer_nav/articles.svg',
             key: ''
         },
         {
             name: 'ভিডিও',
             icon: <VideoCameraOutlined />,
+            bottom_icon: '/assets/mobile_footer_nav/videos.svg',
             key: 'video'
         },
         {
             name: 'ট্রাভেলস ডিলস',
             icon: <CarOutlined />,
+            bottom_icon: '/assets/mobile_footer_nav/travel_deals.svg',
             key: 'travel_deals'
         },
         {
             name: 'সার্ভিস',
             icon: <CustomerServiceOutlined />,
+            bottom_icon: '/assets/mobile_footer_nav/services.svg',
             key: 'service'
         }
     ]
@@ -36,9 +40,15 @@ export const TabNavigator = ({ setTabMenu }) => {
             }
             else {
                 return (
-                    <Link href='/category/[category]' as={`/category/${menu.key}`} key={i}>
-                        <Button shape="round" className={styles.TabNavBtn}>{menu.name}</Button>
-                    </Link>
+                    //Bottom Tab Navigator
+                    menu.key ?
+                        <Link href='/category/[category]' as={`/category/${menu.key}`} key={i}>
+                            <Avatar shape="square" className={styles.TabNavBtn} icon={menu.icon} src={menu.bottom_icon} />
+                        </Link>
+                        :
+                        <Link href='/' as={`/`} key={i}>
+                            <Avatar shape="square" className={styles.TabNavBtn} icon={menu.icon} src={menu.bottom_icon} />
+                        </Link>
                 )
             }
         })
@@ -47,10 +57,23 @@ export const TabNavigator = ({ setTabMenu }) => {
 
 
     return (
-        <div className={`${styles.tabNavigatorContainer}`}>
-            <div className={styles.tabNavigatorWrapper}>
-                {renderTabMenu()}
-            </div>
+        <div>
+            {
+                setTabMenu ?
+                    //home Tab Navigator
+                    <div className={`${styles.tabNavigatorContainer}`}>
+                        <div className={styles.tabNavigatorWrapper}>
+                            {renderTabMenu()}
+                        </div>
+                    </div>
+                    :
+                    //bottom Tab Navigator
+                    <div className={`${styles.bottomTabNavigatorContainer}`}>
+                        <div className={styles.tabNavigatorWrapper}>
+                            {renderTabMenu()}
+                        </div>
+                    </div>
+            }
         </div>
     )
 

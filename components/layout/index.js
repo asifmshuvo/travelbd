@@ -19,7 +19,7 @@ export default ({ children }) => {
                 {children}
 
                 {category ?
-                    <div className='tabNavigator' style={{ margin: '0', position: 'sticky', bottom: '0', top: 'calc(100vh - 65px)' }}>
+                    <div className='tabNavigator' style={{ margin: '0', position: 'sticky', bottom: '-1px', top: 'calc(100vh - 48px)' }}>
                         <TabNavigator />
                     </div>
                     : null}

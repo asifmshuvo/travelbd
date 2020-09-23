@@ -28,6 +28,43 @@
     }
 }
 
+.bottomTabNavigatorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background:#fff;
+    overflow-x: auto;
+    scroll-behavior: auto;
+
+    .tabNavigatorWrapper{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        background: #fff;
+        -webkit-box-shadow: 0px -5px 5px 0px rgba(138,138,138,0.75);
+        -moz-box-shadow: 0px -5px 5px 0px rgba(138,138,138,0.75);
+        box-shadow: 0px -5px 5px 0px rgba(138,138,138,0.75);
+
+        .TabNavBtn {
+            color: #292B2C;
+            margin: 8px;
+            background: #fff;
+
+            img {
+                object-fit: contain;
+                opacity: 0.9;
+            }
+        
+        }
+        
+        .TabNavBtn:active{
+            top: 5px;
+        }
+    
+    }
+}
+
 @media (max-width:525px) {
     .tabNavigatorContainer{
         justify-content: flex-start;
