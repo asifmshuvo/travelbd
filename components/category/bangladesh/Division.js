@@ -39,9 +39,9 @@ const Division = () => {
             <Link as={`/category/${menu.slug}`} href="/category/[category]" >
                 <Card
                     hoverable
-                    style={{ minWidth: 135, minHeight: 140, borderRadius: '20px', margin: '5px' }}
+                    style={{ minWidth: 135, minHeight: 140, borderRadius: '8px', margin: '5px' }}
                     className={divisionStyles.card}
-                    cover={<Avatar shape="square" size={54} className={styles.cardMapIcon} src={`/assets/district_icon/${menu.slug}.svg`} />}
+                    cover={<Avatar shape="square" size={64} className={styles.cardMapIcon} src={`/assets/district_icon/${menu.slug}.svg`} />}
                 >
                     <Meta title={<center>{menu.name}</center>} />
                 </Card>

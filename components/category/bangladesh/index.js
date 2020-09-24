@@ -34,9 +34,9 @@ const Bangladesh = () => {
             <Link as={`/category/bangladesh/${menu.slug}`} href="/category/bangladesh/[division]" >
                 <Card
                     hoverable
-                    style={{ minWidth: 150, minHeight: 150, borderRadius: '20px', margin: '5px' }}
+                    style={{ minWidth: 150, minHeight: 150, borderRadius: '8px', margin: '5px' }}
                     className={divisionStyles.card}
-                    cover={<Avatar shape="square" size={54} className={divisionStyles.cardMapIcon} src={`/assets/division_icon/${menu.slug}.svg`} />}
+                    cover={<Avatar shape="square" size={64} className={divisionStyles.cardMapIcon} src={`/assets/division_icon/${menu.slug}.svg`} />}
                 >
                     <Meta title={<center>{menu.name}</center>} />
                 </Card>

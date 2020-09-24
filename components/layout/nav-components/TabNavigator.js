@@ -20,7 +20,7 @@ export const TabNavigator = ({ setTabMenu }) => {
             key: 'video'
         },
         {
-            name: 'ট্রাভেলস ডিলস',
+            name: 'ট্রাভেল ডিলস',
             icon: <CarOutlined />,
             bottom_icon: '/assets/mobile_footer_nav/travel_deals.svg',
             key: 'travel_deals'

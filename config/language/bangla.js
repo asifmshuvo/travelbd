@@ -47,7 +47,19 @@ export const mainMenu = [
                     {
                         "name": "মানিকগঞ্জ",
                         "slug": "manikgonj"
-                    }
+                    },
+                    {
+                        "name": "মুন্সীগঞ্জ",
+                        "slug": "monshigonj"
+                    },
+                    {
+                        "name": "রাজবাড়ী",
+                        "slug": "rajbari"
+                    },
+                    {
+                        "name": "শরীয়তপুর",
+                        "slug": "shoriotpur"
+                    },
                 ]
             },
             {
@@ -115,7 +127,11 @@ export const mainMenu = [
                     {
                         "name": "রাঙ্গামাটি",
                         "slug": "rangamati"
-                    }
+                    },
+                    {
+                        "name": "লক্ষ্মীপুর",
+                        "slug": "laxmipur"
+                    },
                 ]
             },
             {
@@ -279,7 +295,7 @@ export const mainMenu = [
                         "slug": "jamalpur"
                     },
                     {
-                        "name": "নেত্রকোনা",
+                        "name": "নেত্রকোণা",
                         "slug": "netrokona"
                     },
                     {
@@ -331,7 +347,7 @@ export const mainMenu = [
                 slug: 'europe'
             },
             {
-                name: "আরো দেশ",
+                name: "আরও দেশ",
                 slug: 'othercountries'
             },
 
@@ -440,11 +456,11 @@ export const drawerMenu = [
         ]
     },
     {
-        name: "অবদান",
+        name: "আপনিও লিখুন",
         slug: '',
         nodes: [
             {
-                name: "আপনিও লিখুন",
+                name: "লেখা পাঠান",
                 slug: ''
             },
             {

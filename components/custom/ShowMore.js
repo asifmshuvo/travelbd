@@ -4,7 +4,7 @@ export const ShowMore = (props) => {
     return (
         <Row>
             <div className="show-more-wrapper">
-                <span>Show More</span>
+                <span>আরো দেখুন</span>
             </div>
             <style jsx>
                 {`

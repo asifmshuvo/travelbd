@@ -41,16 +41,16 @@ const SiteFooter = () => {
                         <Col span={24} md={{ span: 7, offset: 2 }} className="mb-3">
                             <img className={styles.footerSiteLogo} src="/assets/logo/tbd_footer_logo.svg" alt="" />
                             <p><b>
-                                ট্রাভেল বাংলাদেশ ট্রাভেলারদের জন্য দেশ-বিদেশে ভ্রমন বিষয়ক যাবতীয় তথ্য নিয়ে পূর্ণাঙ্গ পোর্টাল এবং ট্রাভেল বিষয়ক অন্য সব ধরণের প্রমোশনাল সার্ভিস প্রদানকারী প্লাটফর্ম।
+                                ট্রাভেল বাংলাদেশ ট্রাভেলারদের জন্য দেশ-বিদেশে ভ্রমণ বিষয়ক যাবতীয় তথ্য নিয়ে পূর্ণাঙ্গ পোর্টাল এবং ট্রাভেল বিষয়ক প্রতিষ্ঠানের জন্য সব ধরনের প্রমোশনাল সার্ভিস প্রদানকারী প্ল্যাটফর্ম।
                             </b>
                             </p>
 
                             <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-                                <p><b>যোগাযোগঃ</b> &nbsp;</p>
+                                <p><b>যোগাযোগ:</b>&nbsp;</p>
                                 <p><a href="mailto:contact@travelbd.xyz" target="_top">contact@travelbd.xyz</a></p>
                             </div>
 
-                            <p >Copyright © 2020 All Rights Reserved. By <a href="http://travelbd.xyz">Trvale Info Global Ltd.</a>
+                            <p >Copyright © 2020 <a href="http://travelbd.xyz">Travel Info Global Limited.</a> All Rights Reserved.
                             </p>
                         </Col>
                         <Col span={24} md={{ span: 7, offset: 2 }} className="mb-5">
